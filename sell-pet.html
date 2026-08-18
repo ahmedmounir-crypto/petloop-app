@@ -63,74 +63,61 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="sell-pet-signed-out" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <h2>Log in to list a pet</h2>
+    <a href="account.html?next=sell-pet.html" class="btn btn-coral">Log In</a>
+  </div>
+</section>
+
+<section class="section" id="sell-pet-success" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <span class="badge-pill badge-green" style="margin-bottom:14px;"><span class="icon "><img src="assets/icons/circle-check-white.svg" alt=""></span> Listing Published</span>
+    <h2>Your listing is live!</h2>
+    <a href="marketplace.html" class="btn btn-coral">View on Marketplace</a>
+  </div>
+</section>
+
+<section class="section" id="sell-pet-root" style="display:none;">
   <div class="container-narrow">
-    <div class="card" style="margin-bottom:24px;">
-      <h3 class="mt-0">1. Pet Details</h3>
-      <div class="species-picker" style="margin-bottom:24px;">
-        <div class="species-opt active"><span class="icon "><img src="assets/icons/dog-coral.svg" alt=""></span><span>Dog</span></div>
-        <div class="species-opt"><span class="icon "><img src="assets/icons/cat-ink.svg" alt=""></span><span>Cat</span></div>
-        <div class="species-opt"><span class="icon "><img src="assets/icons/bird-ink.svg" alt=""></span><span>Bird</span></div>
-        <div class="species-opt"><span class="icon "><img src="assets/icons/fish-ink.svg" alt=""></span><span>Fish</span></div>
-        <div class="species-opt"><span class="icon "><img src="assets/icons/rabbit-ink.svg" alt=""></span><span>Rabbit</span></div>
-        <div class="species-opt"><span class="icon "><img src="assets/icons/turtle-ink.svg" alt=""></span><span>Reptile</span></div>
-        <div class="species-opt"><span class="icon "><img src="assets/icons/horse-ink.svg" alt=""></span><span>Horse</span></div>
-        <div class="species-opt"><span class="icon "><img src="assets/icons/paw-ink.svg" alt=""></span><span>Other</span></div>
+    <form id="sell-pet-form">
+      <div class="card" style="margin-bottom:24px;">
+        <h3 class="mt-0">1. Pet Details</h3>
+        <div class="form-field" id="sell-pet-select-field" style="margin-bottom:18px;">
+          <label>Which of your pets? (optional — pre-fills details below)</label>
+          <select id="sell-pet-select"><option value="">— List something not linked to one of my pets —</option></select>
+        </div>
+        <div class="species-picker" id="sell-pet-species-picker" style="margin-bottom:24px;">
+          <div class="species-opt active" data-species="Dog"><span class="icon "><img src="assets/icons/dog-coral.svg" alt=""></span><span>Dog</span></div>
+          <div class="species-opt" data-species="Cat"><span class="icon "><img src="assets/icons/cat-ink.svg" alt=""></span><span>Cat</span></div>
+          <div class="species-opt" data-species="Bird"><span class="icon "><img src="assets/icons/bird-ink.svg" alt=""></span><span>Bird</span></div>
+          <div class="species-opt" data-species="Fish"><span class="icon "><img src="assets/icons/fish-ink.svg" alt=""></span><span>Fish</span></div>
+          <div class="species-opt" data-species="Rabbit"><span class="icon "><img src="assets/icons/rabbit-ink.svg" alt=""></span><span>Rabbit</span></div>
+          <div class="species-opt" data-species="Reptile"><span class="icon "><img src="assets/icons/turtle-ink.svg" alt=""></span><span>Reptile</span></div>
+          <div class="species-opt" data-species="Horse"><span class="icon "><img src="assets/icons/horse-ink.svg" alt=""></span><span>Horse</span></div>
+          <div class="species-opt" data-species="Other"><span class="icon "><img src="assets/icons/paw-ink.svg" alt=""></span><span>Other</span></div>
+        </div>
+        <div class="form-field"><label>Title</label><input type="text" id="sell-pet-title" placeholder="Golden Retriever Puppies (litter of 4)" required></div>
+        <div class="form-field"><label>Description</label><textarea id="sell-pet-description" placeholder="Tell buyers about temperament, health history, and why you're listing..."></textarea></div>
+        <div class="form-field">
+          <label>Photo (optional)</label>
+          <label class="upload-drop" style="cursor:pointer;display:block;">
+            <span class="icon "><img src="assets/icons/camera-grey.svg" alt=""></span>
+            <div id="sell-pet-photo-label">Drag &amp; drop a photo, or <b>browse files</b></div>
+            <input type="file" id="sell-pet-photo" accept="image/*" style="display:none;">
+          </label>
+        </div>
       </div>
-      <div class="form-grid">
-        <div class="form-field"><label>Title</label><input type="text" placeholder="Golden Retriever Puppies (litter of 4)"></div>
-        <div class="form-field"><label>Breed</label><input type="text" placeholder="Golden Retriever"></div>
-      </div>
-      <div class="form-grid">
-        <div class="form-field"><label>Age</label><input type="text" placeholder="8 weeks"></div>
-        <div class="form-field"><label>Quantity Available</label><input type="number" placeholder="4"></div>
-      </div>
-      <div class="form-field"><label>Description</label><textarea placeholder="Tell buyers about temperament, health history, and why you're listing..."></textarea></div>
-      <div class="form-field">
-        <label>Photos</label>
-        <div class="upload-drop"><span class="icon "><img src="assets/icons/camera-grey.svg" alt=""></span><div>Drag &amp; drop photos, or <b>browse files</b></div></div>
-      </div>
-    </div>
 
-    <div class="card" style="margin-bottom:24px;">
-      <h3 class="mt-0"><span class="icon "><img src="assets/icons/syringe-coral.svg" alt=""></span> 2. Vaccination Status</h3>
-      <div class="form-field">
-        <label>Vaccination Status</label>
-        <select>
-          <option>Fully Vaccinated</option>
-          <option>Partially Vaccinated</option>
-          <option>Not Yet Vaccinated</option>
-        </select>
+      <div class="card" style="margin-bottom:32px;">
+        <h3 class="mt-0">2. Price</h3>
+        <div class="form-field"><label>Price (EGP)</label><input type="number" id="sell-pet-price" placeholder="6500" min="0" required></div>
       </div>
-      <div class="form-field">
-        <label>Upload Vet Record (optional)</label>
-        <div class="upload-drop"><span class="icon "><img src="assets/icons/upload-grey.svg" alt=""></span><div>Drag &amp; drop a vet record, or <b>browse files</b></div></div>
-      </div>
-    </div>
 
-    <div class="card" style="margin-bottom:24px;">
-      <h3 class="mt-0"><span class="icon "><img src="assets/icons/certificate-coral.svg" alt=""></span> 3. Certificate</h3>
-      <div class="toggle-row">
-        <span>I have a pedigree / breeding certificate</span>
-        <div class="toggle on"></div>
-      </div>
-      <div class="form-field" style="margin-top:18px;">
-        <label>Upload Certificate</label>
-        <div class="upload-drop"><span class="icon "><img src="assets/icons/upload-grey.svg" alt=""></span><div>Drag &amp; drop certificate, or <b>browse files</b></div></div>
-      </div>
-      <p class="form-hint">Listings without a certificate are still welcome &mdash; they'll simply display "No certificate provided" instead of a Verified badge.</p>
-    </div>
-
-    <div class="card" style="margin-bottom:32px;">
-      <h3 class="mt-0">4. Price &amp; Location</h3>
-      <div class="form-grid">
-        <div class="form-field"><label>Price (EGP)</label><input type="number" placeholder="6500"></div>
-        <div class="form-field"><label>Location</label><input type="text" placeholder="New Cairo, Egypt"></div>
-      </div>
-    </div>
-
-    <a href="listing-detail.html" class="btn btn-coral btn-block"><span class="icon "><img src="assets/icons/store-white.svg" alt=""></span> Publish Listing</a>
-    <p class="form-hint" style="text-align:center;margin-top:14px;">All listings are reviewed by our Trust &amp; Safety team before going live, in line with Egyptian pet sale regulations.</p>
+      <div id="sell-pet-status" class="form-hint" style="display:none;margin-bottom:16px;padding:12px 14px;border-radius:10px;"></div>
+      <button type="submit" class="btn btn-coral btn-block" id="sell-pet-submit"><span class="icon "><img src="assets/icons/store-white.svg" alt=""></span> Publish Listing</button>
+      <p class="form-hint" style="text-align:center;margin-top:14px;">Listing is free — PetLoop takes no commission on private pet sales.</p>
+    </form>
   </div>
 </section>
 
@@ -194,5 +181,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/sell-pet.js"></script>
 </body>
 </html>

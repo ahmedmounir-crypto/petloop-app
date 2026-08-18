@@ -38,9 +38,9 @@
       <nav class="nav-links">
       <a href="shop.html">Shop</a>
       <a href="feed.html">Community</a>
-      <a href="matchmaking.html" class="active">Matchmaking</a>
-      <a href="walks.html" class="active">Dog Walks</a>
-      <a href="grooming.html" class="active">Grooming</a>
+      <a href="matchmaking.html">Matchmaking</a>
+      <a href="walks.html">Dog Walks</a>
+      <a href="grooming.html">Grooming</a>
       <a href="pharmacy.html" class="active">Pharmacy</a>
       <a href="marketplace.html">Marketplace</a>
       </nav>
@@ -69,92 +69,27 @@
 
 <section class="section">
   <div class="container">
-    <div class="tabs" style="margin-bottom:32px;">
-      <a href="#" class="tab active">All Medicine</a>
-      <a href="#" class="tab">Prescription (Rx)</a>
-      <a href="#" class="tab">Over-the-Counter</a>
-      <a href="#" class="tab">Supplements</a>
-      <a href="#" class="tab">First Aid</a>
+    <div class="tabs" style="margin-bottom:32px;" id="pharmacy-tabs">
+      <a href="#" class="tab active" data-filter="all">All Medicine</a>
+      <a href="#" class="tab" data-filter="rx">Prescription (Rx)</a>
+      <a href="#" class="tab" data-filter="otc">Over-the-Counter</a>
     </div>
-    <div class="product-grid">
-      
-      <div class="product-card">
-        <div class="product-media"><span class="badge-pill badge-green flag">OTC</span><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div>
-        <div class="product-body">
-          <span class="cat">Parasite Control</span>
-          <h4>Flea & Tick Prevention Chewables (3-pack)</h4>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> (401)</div>
-          <div class="price-row"><span class="price">EGP 780</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div>
-        </div>
+    <div class="pdp-grid">
+      <div>
+        <div class="product-grid" id="pharmacy-product-grid"></div>
+        <p class="form-hint" id="pharmacy-empty" style="display:none;">No medicine matches this filter yet.</p>
       </div>
-      
-      <div class="product-card">
-        <div class="product-media"><span class="badge-pill badge-coral flag"><span class="icon "><img src="assets/icons/kit-medical-white.svg" alt=""></span> Rx Required</span><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div>
-        <div class="product-body">
-          <span class="cat">Pain Management</span>
-          <h4>Post-Surgery Pain Relief (Vet Prescribed)</h4>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> (34)</div>
-          <div class="price-row"><span class="price">EGP 620</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-media"><span class="badge-pill badge-green flag">OTC</span><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div>
-        <div class="product-body">
-          <span class="cat">Supplements</span>
-          <h4>Joint & Mobility Chews, 60ct</h4>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> (56)</div>
-          <div class="price-row"><span class="price">EGP 890</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-media"><span class="badge-pill badge-coral flag"><span class="icon "><img src="assets/icons/kit-medical-white.svg" alt=""></span> Rx Required</span><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div>
-        <div class="product-body">
-          <span class="cat">Antibiotics</span>
-          <h4>Amoxicillin Suspension (Vet Prescribed)</h4>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> (19)</div>
-          <div class="price-row"><span class="price">EGP 340</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-media"><span class="badge-pill badge-green flag">OTC</span><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div>
-        <div class="product-body">
-          <span class="cat">Dermatology</span>
-          <h4>Medicated Anti-Fungal Shampoo</h4>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> (88)</div>
-          <div class="price-row"><span class="price">EGP 260</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-media"><span class="badge-pill badge-coral flag"><span class="icon "><img src="assets/icons/kit-medical-white.svg" alt=""></span> Rx Required</span><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div>
-        <div class="product-body">
-          <span class="cat">Chronic Care</span>
-          <h4>Feline Kidney Support Prescription Diet</h4>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> (41)</div>
-          <div class="price-row"><span class="price">EGP 980</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-media"><span class="badge-pill badge-green flag">OTC</span><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div>
-        <div class="product-body">
-          <span class="cat">First Aid</span>
-          <h4>Pet First Aid Kit</h4>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> (112)</div>
-          <div class="price-row"><span class="price">EGP 450</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div>
-        </div>
-      </div>
-      
-      <div class="product-card">
-        <div class="product-media"><span class="badge-pill badge-coral flag"><span class="icon "><img src="assets/icons/kit-medical-white.svg" alt=""></span> Rx Required</span><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div>
-        <div class="product-body">
-          <span class="cat">Vaccination</span>
-          <h4>Rabies Vaccine (In-Clinic Administration)</h4>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> (203)</div>
-          <div class="price-row"><span class="price">EGP 150</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div>
+      <div>
+        <div class="summary-card" id="pharmacy-order-card">
+          <h3 class="mt-0"><span class="icon "><img src="assets/icons/kit-medical-coral.svg" alt=""></span> Your Pharmacy Order</h3>
+          <div id="pharmacy-cart-list"><p class="form-hint">No items added yet.</p></div>
+          <div class="summary-row total" id="pharmacy-cart-total-row" style="display:none;"><span>Total</span><span id="pharmacy-cart-total">EGP 0</span></div>
+          <div class="form-field" id="pharmacy-notes-field" style="display:none;margin-top:14px;">
+            <label>Notes for our pharmacist (dosage, diagnosis, vet name — optional but helpful for Rx items)</label>
+            <textarea id="pharmacy-notes" rows="3" placeholder="e.g. Prescribed by Dr. Youssef at Maadi Vet Clinic for post-op recovery"></textarea>
+          </div>
+          <div id="pharmacy-order-status" class="form-hint" style="display:none;margin-top:12px;padding:12px 14px;border-radius:10px;"></div>
+          <button type="button" class="btn btn-coral btn-block" id="pharmacy-submit-order" style="display:none;margin-top:14px;">Submit Order for Review</button>
         </div>
       </div>
     </div>
@@ -247,5 +182,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/pharmacy.js"></script>
 </body>
 </html>

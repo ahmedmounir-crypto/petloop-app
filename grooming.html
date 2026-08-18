@@ -38,10 +38,10 @@
       <nav class="nav-links">
       <a href="shop.html">Shop</a>
       <a href="feed.html">Community</a>
-      <a href="matchmaking.html" class="active">Matchmaking</a>
-      <a href="walks.html" class="active">Dog Walks</a>
+      <a href="matchmaking.html">Matchmaking</a>
+      <a href="walks.html">Dog Walks</a>
       <a href="grooming.html" class="active">Grooming</a>
-      <a href="pharmacy.html" class="active">Pharmacy</a>
+      <a href="pharmacy.html">Pharmacy</a>
       <a href="marketplace.html">Marketplace</a>
       </nav>
       <div class="header-actions">
@@ -68,86 +68,14 @@
     <div class="shop-layout">
       <aside>
         <div class="filter-box">
-          <h5>Service Type</h5>
-          <label class="filter-row"><input type="checkbox" checked> Full Groom</label>
-          <label class="filter-row"><input type="checkbox"> Bath &amp; Brush</label>
-          <label class="filter-row"><input type="checkbox"> Nail Trim</label>
-          <label class="filter-row"><input type="checkbox"> Mobile / At-Home</label>
-        </div>
-        <div class="filter-box">
-          <h5>Species</h5>
-          <label class="filter-row"><input type="checkbox" checked> Dogs</label>
-          <label class="filter-row"><input type="checkbox"> Cats</label>
-        </div>
-        <div class="filter-box">
-          <h5>Rating</h5>
-          <label class="filter-row"><input type="checkbox" checked> 4+ stars</label>
+          <h5>City</h5>
+          <div id="grooming-city-filters"><label class="filter-row"><input type="checkbox" checked disabled> Loading...</label></div>
         </div>
       </aside>
       <div>
-        <div class="sort-row"><span style="font-size:14px;color:var(--grey);">42 groomers near Cairo</span><select class="select-pill"><option>Sort: Top Rated</option><option>Sort: Nearest</option></select></div>
-        <div class="product-grid" style="grid-template-columns:repeat(3,1fr);">
-          
-      <div class="groomer-card">
-        <div class="groomer-media"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span></div>
-        <div class="groomer-body">
-          <h4 style="margin:0 0 4px;font-size:16px;">Whiskers & Co. Grooming</h4>
-          <div style="font-size:13px;color:var(--grey-light);margin-bottom:8px;"><span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Maadi, Cairo</div>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> <span>5.0 (212)</span></div>
-          <div class="price-row" style="margin-top:12px;"><span class="price" style="font-size:16px;">From EGP 350</span><a href="groomer-profile.html" class="btn btn-coral btn-sm">Book</a></div>
-        </div>
-      </div>
-          
-      <div class="groomer-card">
-        <div class="groomer-media"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span></div>
-        <div class="groomer-body">
-          <h4 style="margin:0 0 4px;font-size:16px;">Pawlish Studio</h4>
-          <div style="font-size:13px;color:var(--grey-light);margin-bottom:8px;"><span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Zamalek, Cairo</div>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> <span>4.0 (98)</span></div>
-          <div class="price-row" style="margin-top:12px;"><span class="price" style="font-size:16px;">From EGP 280</span><a href="groomer-profile.html" class="btn btn-coral btn-sm">Book</a></div>
-        </div>
-      </div>
-          
-      <div class="groomer-card">
-        <div class="groomer-media"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span></div>
-        <div class="groomer-body">
-          <h4 style="margin:0 0 4px;font-size:16px;">The Fluff House</h4>
-          <div style="font-size:13px;color:var(--grey-light);margin-bottom:8px;"><span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> New Cairo</div>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> <span>5.0 (301)</span></div>
-          <div class="price-row" style="margin-top:12px;"><span class="price" style="font-size:16px;">From EGP 400</span><a href="groomer-profile.html" class="btn btn-coral btn-sm">Book</a></div>
-        </div>
-      </div>
-          
-      <div class="groomer-card">
-        <div class="groomer-media"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span></div>
-        <div class="groomer-body">
-          <h4 style="margin:0 0 4px;font-size:16px;">Mobile Groom EG</h4>
-          <div style="font-size:13px;color:var(--grey-light);margin-bottom:8px;"><span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Comes to you</div>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> <span>4.0 (76)</span></div>
-          <div class="price-row" style="margin-top:12px;"><span class="price" style="font-size:16px;">From EGP 450</span><a href="groomer-profile.html" class="btn btn-coral btn-sm">Book</a></div>
-        </div>
-      </div>
-          
-      <div class="groomer-card">
-        <div class="groomer-media"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span></div>
-        <div class="groomer-body">
-          <h4 style="margin:0 0 4px;font-size:16px;">Cairo Cat Spa</h4>
-          <div style="font-size:13px;color:var(--grey-light);margin-bottom:8px;"><span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Heliopolis</div>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> <span>5.0 (64)</span></div>
-          <div class="price-row" style="margin-top:12px;"><span class="price" style="font-size:16px;">From EGP 320</span><a href="groomer-profile.html" class="btn btn-coral btn-sm">Book</a></div>
-        </div>
-      </div>
-          
-      <div class="groomer-card">
-        <div class="groomer-media"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span></div>
-        <div class="groomer-body">
-          <h4 style="margin:0 0 4px;font-size:16px;">Bark & Bubbles</h4>
-          <div style="font-size:13px;color:var(--grey-light);margin-bottom:8px;"><span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> 6th of October City</div>
-          <div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> <span>4.0 (53)</span></div>
-          <div class="price-row" style="margin-top:12px;"><span class="price" style="font-size:16px;">From EGP 260</span><a href="groomer-profile.html" class="btn btn-coral btn-sm">Book</a></div>
-        </div>
-      </div>
-        </div>
+        <div class="sort-row"><span style="font-size:14px;color:var(--grey);" id="grooming-count-label">Loading groomers...</span><select class="select-pill" id="grooming-sort"><option value="rating">Sort: Top Rated</option><option value="price">Sort: Price</option></select></div>
+        <div class="product-grid" style="grid-template-columns:repeat(3,1fr);" id="grooming-grid"></div>
+        <p class="form-hint" id="grooming-empty" style="display:none;">No groomers match this filter yet.</p>
       </div>
     </div>
   </div>
@@ -235,5 +163,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/grooming.js"></script>
 </body>
 </html>

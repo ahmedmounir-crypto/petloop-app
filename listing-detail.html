@@ -54,53 +54,41 @@
   </div>
 </header>
 
-<section class="section section--tight">
+<section class="section section--tight" id="listing-root" style="display:none;">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="marketplace.html">Marketplace</a> / Golden Retriever Puppies</div>
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="marketplace.html">Marketplace</a> / <span id="listing-breadcrumb-title">Listing</span></div>
     <div class="pdp-grid">
       <div>
-        <div class="pdp-gallery-main"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span></div>
-        <div class="pdp-thumbs">
-          <div class="active"><span class="icon "><img src="assets/icons/dog-grey.svg" alt=""></span></div>
-          <div><span class="icon "><img src="assets/icons/paw-grey.svg" alt=""></span></div>
-          <div><span class="icon "><img src="assets/icons/certificate-grey.svg" alt=""></span></div>
-          <div><span class="icon "><img src="assets/icons/images-grey.svg" alt=""></span></div>
-        </div>
+        <div class="pdp-gallery-main" id="listing-gallery-main"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span></div>
       </div>
       <div class="pdp-info">
-        <div class="flex gap-8" style="margin-bottom:14px;">
-          <span class="badge-pill badge-gold"><span class="icon "><img src="assets/icons/certificate-gold.svg" alt=""></span> Verified Certificate</span>
-          <span class="badge-pill badge-green"><span class="icon "><img src="assets/icons/syringe-green.svg" alt=""></span> Vaccinated</span>
-        </div>
-        <h1>Golden Retriever Puppies (litter of 4)</h1>
-        <div style="color:var(--grey-light);font-size:14px;margin-bottom:14px;"><span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> New Cairo, Egypt &middot; Listed 2 days ago</div>
-        <div class="price" style="font-size:30px;">EGP 6,500 <span style="font-size:14px;color:var(--grey-light);font-weight:500;">per puppy</span></div>
-        <p style="margin-top:14px;">Healthy litter of 4 Golden Retriever puppies, 8 weeks old, ready to go to their new homes. Both parents on-site with verified pedigree certificates. First round of vaccinations completed &mdash; vet records available on request.</p>
-        <div class="spec-list">
-          <div class="row"><span>Species</span><span>Dog</span></div>
-          <div class="row"><span>Breed</span><span>Golden Retriever</span></div>
-          <div class="row"><span>Age</span><span>8 weeks</span></div>
-          <div class="row"><span>Vaccination Status</span><span><span class="icon "><img src="assets/icons/circle-check-green.svg" alt=""></span> Vaccinated (1st round)</span></div>
-          <div class="row"><span>Certificate</span><span><span class="icon "><img src="assets/icons/circle-check-green.svg" alt=""></span> Verified by PetLoop</span></div>
-        </div>
-        <a href="chat.html" class="btn btn-coral btn-block" style="margin-top:22px;"><span class="icon "><img src="assets/icons/comment-white.svg" alt=""></span> Contact Seller</a>
+        <span class="badge-pill badge-coral" id="listing-category-badge">Pet</span>
+        <h1 id="listing-title">&nbsp;</h1>
+        <div style="color:var(--grey-light);font-size:14px;margin-bottom:14px;" id="listing-meta"></div>
+        <div class="price" style="font-size:30px;" id="listing-price"></div>
+        <p style="margin-top:14px;" id="listing-description"></p>
+        <a href="#" class="btn btn-coral btn-block" id="listing-contact-seller-btn" style="margin-top:22px;"><span class="icon "><img src="assets/icons/comment-white.svg" alt=""></span> Contact Seller</a>
+        <p class="form-hint" id="listing-own-note" style="display:none;text-align:center;">This is your listing.</p>
         <p class="form-hint" style="text-align:center;"><span class="icon "><img src="assets/icons/shield-grey.svg" alt=""></span> Marketplace conversations may be reviewed by our Trust &amp; Safety team.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--cream">
+<section class="section" id="listing-not-found" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <h2>Listing not found</h2>
+    <p>We couldn't find that listing. It may have been removed or sold.</p>
+    <a href="marketplace.html" class="btn btn-coral">Back to Marketplace</a>
+  </div>
+</section>
+
+<section class="section section--cream" id="listing-similar-section" style="display:none;">
   <div class="container">
     <div class="section-head">
       <h2>Similar Listings</h2>
     </div>
-    <div class="listing-grid">
-      <div class="listing-card"><div class="listing-media"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span><span class="badge-pill badge-gold" style="position:absolute;top:10px;left:10px;"><span class="icon "><img src="assets/icons/certificate-gold.svg" alt=""></span> Verified</span></div><div class="listing-body"><h4>German Shepherd, Adult</h4><div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">2 years &middot; 6th of October City</div><div class="price-row"><span class="listing-price">EGP 4,800</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div></div></div>
-      <div class="listing-card"><div class="listing-media"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span></div><div class="listing-body"><h4>Labrador Puppies</h4><div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">6 weeks &middot; Maadi</div><div class="price-row"><span class="listing-price">EGP 5,200</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div></div></div>
-      <div class="listing-card"><div class="listing-media"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span><span class="badge-pill badge-gold" style="position:absolute;top:10px;left:10px;"><span class="icon "><img src="assets/icons/certificate-gold.svg" alt=""></span> Verified</span></div><div class="listing-body"><h4>Golden Retriever, Adult Female</h4><div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">2 years &middot; Zamalek</div><div class="price-row"><span class="listing-price">EGP 4,000</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div></div></div>
-      <div class="listing-card"><div class="listing-media"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span></div><div class="listing-body"><h4>Poodle Puppy</h4><div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">9 weeks &middot; New Cairo</div><div class="price-row"><span class="listing-price">EGP 3,800</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div></div></div>
-    </div>
+    <div class="listing-grid" id="listing-similar-grid"></div>
   </div>
 </section>
 
@@ -164,5 +152,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/listing-detail.js"></script>
 </body>
 </html>

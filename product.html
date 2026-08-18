@@ -54,55 +54,48 @@
   </div>
 </header>
 
-<section class="section section--tight">
+<section class="section section--tight" id="product-root" style="display:none;">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / Dog Food</div>
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="product-breadcrumb-cat">Product</span></div>
     <div class="pdp-grid">
       <div>
-        <div class="pdp-gallery-main"><span class="icon "><img src="assets/icons/bone-ink.svg" alt=""></span></div>
-        <div class="pdp-thumbs">
-          <div class="active"><span class="icon "><img src="assets/icons/bone-grey.svg" alt=""></span></div>
-          <div><span class="icon "><img src="assets/icons/bag-grey.svg" alt=""></span></div>
-          <div><span class="icon "><img src="assets/icons/paw-grey.svg" alt=""></span></div>
-          <div><span class="icon "><img src="assets/icons/images-grey.svg" alt=""></span></div>
-        </div>
+        <div class="pdp-gallery-main" id="product-gallery-main"><span class="icon "><img src="assets/icons/bone-ink.svg" alt=""></span></div>
       </div>
       <div class="pdp-info">
-        <span class="badge-pill badge-coral">Best Seller</span>
-        <h1>Grain-Free Chicken &amp; Rice Adult Formula, 12kg</h1>
-        <div class="stars" style="margin-bottom:14px;"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> <span style="color:var(--grey);">4.3 &middot; 312 reviews</span></div>
-        <div class="price" style="font-size:30px;">EGP 1,240</div>
-        <p style="margin-top:14px;">A complete, grain-free formula for adult dogs of all breeds &mdash; real chicken as the first ingredient, with added glucosamine for joint support and omega fatty acids for a healthy coat.</p>
-        <div class="badge-pill badge-green" style="margin-bottom:8px;"><span class="icon "><img src="assets/icons/circle-check-green.svg" alt=""></span> In Stock &mdash; Ships within 24h</div>
+        <span class="badge-pill badge-coral" id="product-cat-badge">Pet Supplies</span>
+        <h1 id="product-title">&nbsp;</h1>
+        <div class="price" style="font-size:30px;" id="product-price"></div>
+        <p style="margin-top:14px;" id="product-description"></p>
+        <div class="badge-pill badge-green" id="product-in-stock" style="margin-bottom:8px;"><span class="icon "><img src="assets/icons/circle-check-green.svg" alt=""></span> In Stock</div>
+        <div class="badge-pill badge-grey" id="product-out-stock" style="margin-bottom:8px;display:none;">Out of Stock</div>
         <div class="qty-row">
-          <div class="qty-stepper"><button>&minus;</button><span>1</span><button>+</button></div>
-          <a href="cart.html" class="btn btn-coral btn-block"><span class="icon "><img src="assets/icons/cart-white.svg" alt=""></span> Add to Cart</a>
-          <a href="#" class="btn-icon"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></a>
+          <div class="qty-stepper" id="product-qty-stepper"><button type="button" id="product-qty-minus">&minus;</button><span id="product-qty-value">1</span><button type="button" id="product-qty-plus">+</button></div>
+          <button type="button" class="btn btn-coral btn-block" id="product-add-to-cart"><span class="icon "><img src="assets/icons/cart-white.svg" alt=""></span> Add to Cart</button>
         </div>
+        <div id="product-add-status" class="form-hint" style="display:none;margin-top:10px;padding:10px 14px;border-radius:10px;"></div>
         <div class="spec-list">
-          <div class="row"><span>Brand</span><span>PetLoop Essentials</span></div>
-          <div class="row"><span>Species</span><span>Dog</span></div>
-          <div class="row"><span>Life Stage</span><span>Adult</span></div>
-          <div class="row"><span>Weight</span><span>12 kg</span></div>
-          <div class="row"><span>Main Protein</span><span>Chicken</span></div>
-          <div class="row"><span>Grain-Free</span><span>Yes</span></div>
+          <div class="row"><span>Category</span><span id="product-spec-category">&mdash;</span></div>
+          <div class="row"><span>Stock</span><span id="product-spec-stock">&mdash;</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--cream">
+<section class="section" id="product-not-found" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <h2>Product not found</h2>
+    <p>We couldn't find that product. It may have been removed, or the link is incomplete.</p>
+    <a href="shop.html" class="btn btn-coral">Back to Shop</a>
+  </div>
+</section>
+
+<section class="section section--cream" id="related-products-section" style="display:none;">
   <div class="container">
     <div class="section-head">
       <h2>You may also like</h2>
     </div>
-    <div class="product-grid">
-      <div class="product-card"><div class="product-media"><span class="icon "><img src="assets/icons/bone-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div><div class="product-body"><span class="cat">Dog Food</span><h4>Puppy Growth Formula, 6kg</h4><div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> (144)</div><div class="price-row"><span class="price">EGP 690</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div></div></div>
-      <div class="product-card"><div class="product-media"><span class="icon "><img src="assets/icons/bone-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div><div class="product-body"><span class="cat">Dog Treats</span><h4>Freeze-Dried Liver Training Treats</h4><div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> (203)</div><div class="price-row"><span class="price">EGP 210</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div></div></div>
-      <div class="product-card"><div class="product-media"><span class="icon "><img src="assets/icons/bag-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div><div class="product-body"><span class="cat">Feeding</span><h4>Slow-Feed Anti-Gulp Bowl</h4><div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-grey.svg" alt=""></span> (86)</div><div class="price-row"><span class="price">EGP 175</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div></div></div>
-      <div class="product-card"><div class="product-media"><span class="icon "><img src="assets/icons/pills-ink.svg" alt=""></span><div class="wishlist"><span class="icon "><img src="assets/icons/heart-coral.svg" alt=""></span></div></div><div class="product-body"><span class="cat">Pharmacy</span><h4>Daily Multivitamin Chews</h4><div class="stars"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> (98)</div><div class="price-row"><span class="price">EGP 340</span><a href="cart.html" class="add-btn"><span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span></a></div></div></div>
-    </div>
+    <div class="product-grid" id="related-products-grid"></div>
   </div>
 </section>
 
@@ -166,5 +159,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/product.js"></script>
 </body>
 </html>

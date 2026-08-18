@@ -61,47 +61,64 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="checkout-signed-out" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <h2>Log in to check out</h2>
+    <a href="account.html?next=checkout.html" class="btn btn-coral">Log In</a>
+  </div>
+</section>
+
+<section class="section" id="checkout-empty-cart" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <h2>Your cart is empty</h2>
+    <p>Add something from the shop before checking out.</p>
+    <a href="shop.html" class="btn btn-coral">Go to Shop</a>
+  </div>
+</section>
+
+<section class="section" id="checkout-success" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <span class="badge-pill badge-green" style="margin-bottom:14px;"><span class="icon "><img src="assets/icons/circle-check-white.svg" alt=""></span> Order Placed</span>
+    <h2>Thanks — your order is confirmed!</h2>
+    <p id="checkout-success-msg"></p>
+    <a href="shop.html" class="btn btn-coral">Continue Shopping</a>
+  </div>
+</section>
+
+<section class="section" id="checkout-root" style="display:none;">
   <div class="container">
-    <div class="checkout-steps">
-      <div class="active">1. Delivery</div>
-      <div>2. Payment</div>
-      <div>3. Review</div>
-    </div>
-    <div class="pdp-grid">
-      <div>
-        <div class="card" style="margin-bottom:20px;">
-          <h3 class="mt-0">Delivery Address</h3>
-          <div class="form-grid">
-            <div class="form-field"><label>Full Name</label><input type="text" placeholder="Ahmed Mounir"></div>
-            <div class="form-field"><label>Phone Number</label><input type="tel" placeholder="+20 1xx xxx xxxx"></div>
+    <form id="checkout-form">
+      <div class="pdp-grid">
+        <div>
+          <div class="card" style="margin-bottom:20px;">
+            <h3 class="mt-0">Delivery Address</h3>
+            <div class="form-grid">
+              <div class="form-field"><label>Full Name</label><input type="text" id="checkout-name" placeholder="Ahmed Mounir" required></div>
+              <div class="form-field"><label>Phone Number</label><input type="tel" id="checkout-phone" placeholder="+20 1xx xxx xxxx" required></div>
+            </div>
+            <div class="form-field"><label>Address</label><input type="text" id="checkout-address" placeholder="Street, building, apartment" required></div>
+            <div class="form-grid">
+              <div class="form-field"><label>City</label><input type="text" id="checkout-city" placeholder="Cairo" required></div>
+              <div class="form-field"><label>Governorate</label><input type="text" id="checkout-governorate" placeholder="Cairo Governorate"></div>
+            </div>
           </div>
-          <div class="form-field"><label>Address</label><input type="text" placeholder="Street, building, apartment"></div>
-          <div class="form-grid">
-            <div class="form-field"><label>City</label><input type="text" placeholder="Cairo"></div>
-            <div class="form-field"><label>Governorate</label><input type="text" placeholder="Cairo Governorate"></div>
-          </div>
+          <div id="checkout-items-preview"></div>
         </div>
-        <div class="card">
-          <h3 class="mt-0"><span class="icon "><img src="assets/icons/kit-medical-coral.svg" alt=""></span> Prescription Verification</h3>
-          <p>Your order includes a pharmacy item that requires prescription review by our licensed pharmacist before dispatch.</p>
-          <div class="upload-drop"><span class="icon "><img src="assets/icons/upload-grey.svg" alt=""></span><div>Drag &amp; drop your prescription, or <b>browse files</b></div></div>
-        </div>
-      </div>
-      <div>
-        <div class="summary-card">
-          <h3 class="mt-0">Order Summary</h3>
-          <div class="summary-row"><span>Subtotal</span><span>EGP 2,460</span></div>
-          <div class="summary-row"><span>Delivery</span><span>EGP 60</span></div>
-          <div class="summary-row"><span>Promo (WELCOME10)</span><span style="color:var(--green);">&minus;EGP 246</span></div>
-          <div class="summary-row total"><span>Total</span><span>EGP 2,274</span></div>
-          <div class="form-field" style="margin-top:20px;"><label>Payment Method</label>
-            <select><option>Credit / Debit Card</option><option>Cash on Delivery</option><option>Mobile Wallet</option></select>
+        <div>
+          <div class="summary-card">
+            <h3 class="mt-0">Order Summary</h3>
+            <div class="summary-row"><span>Subtotal</span><span id="checkout-subtotal">EGP 0</span></div>
+            <div class="summary-row"><span>Delivery</span><span id="checkout-delivery">EGP 60</span></div>
+            <div class="summary-row total"><span>Total</span><span id="checkout-total">EGP 0</span></div>
+            <div class="form-field" style="margin-top:20px;"><label>Payment Method</label>
+              <select id="checkout-payment-method"><option value="cash_on_delivery">Cash on Delivery</option></select>
+            </div>
+            <div id="checkout-status" class="form-hint" style="display:none;margin-top:12px;padding:12px 14px;border-radius:10px;"></div>
+            <button type="submit" class="btn btn-coral btn-block" id="checkout-submit">Place Order</button>
           </div>
-          <a href="#" class="btn btn-coral btn-block">Place Order</a>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -165,5 +182,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/checkout.js"></script>
 </body>
 </html>

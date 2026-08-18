@@ -38,10 +38,10 @@
       <nav class="nav-links">
       <a href="shop.html">Shop</a>
       <a href="feed.html">Community</a>
-      <a href="matchmaking.html" class="active">Matchmaking</a>
-      <a href="walks.html" class="active">Dog Walks</a>
-      <a href="grooming.html" class="active">Grooming</a>
-      <a href="pharmacy.html" class="active">Pharmacy</a>
+      <a href="matchmaking.html">Matchmaking</a>
+      <a href="walks.html">Dog Walks</a>
+      <a href="grooming.html">Grooming</a>
+      <a href="pharmacy.html">Pharmacy</a>
       <a href="marketplace.html">Marketplace</a>
       </nav>
       <div class="header-actions">
@@ -62,48 +62,33 @@
   </div>
 </section>
 
-<section class="section section--tight">
+<section class="section" id="chat-signed-out" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <h2>Log in to see your messages</h2>
+    <a href="account.html?next=chat.html" class="btn btn-coral">Log In</a>
+  </div>
+</section>
+
+<section class="section section--tight" id="chat-root" style="display:none;">
   <div class="container">
     <div class="chat-shell">
-      <div class="chat-list">
-        
-      <div class="chat-list-item active">
-        <div class="avatar-ring sm"><div class="avatar-inner"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span></div></div>
-        <div class="grow"><h5>Karim H. (Rex)</h5><p>Sure, Saturday works great for us!</p></div>
+      <div class="chat-list" id="chat-list">
+        <p class="form-hint" style="padding:16px;">Loading conversations...</p>
       </div>
-        
-      <div class="chat-list-item">
-        <div class="avatar-ring sm"><div class="avatar-inner"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span></div></div>
-        <div class="grow"><h5>Nourhan S. (Bella)</h5><p>Do you have her hip test results?</p></div>
-      </div>
-        
-      <div class="chat-list-item">
-        <div class="avatar-ring sm"><div class="avatar-inner"><span class="icon "><img src="assets/icons/cat-ink.svg" alt=""></span></div></div>
-        <div class="grow"><h5>Marketplace: Tabby Kittens</h5><p>Is this still available?</p></div>
-      </div>
-        
-      <div class="chat-list-item">
-        <div class="avatar-ring sm"><div class="avatar-inner"><span class="icon "><img src="assets/icons/paw-ink.svg" alt=""></span></div></div>
-        <div class="grow"><h5>Sara (Groomer)</h5><p>Booking confirmed for Saturday 10am</p></div>
-      </div>
-      </div>
-      <div class="chat-main">
+      <div class="chat-main" id="chat-main" style="display:none;">
         <div class="chat-header">
-          <div class="avatar-ring sm"><div class="avatar-inner"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span></div></div>
-          <div class="grow"><h5 style="margin:0;font-size:15px;">Karim H. &middot; Rex (Golden Retriever)</h5><span style="font-size:12px;color:var(--grey-light);">Match request &middot; Active now</span></div>
-          <span class="badge-pill badge-gold"><span class="icon "><img src="assets/icons/certificate-gold.svg" alt=""></span> Verified</span>
+          <div class="avatar-ring sm"><div class="avatar-inner"><span class="icon " id="chat-header-icon"><img src="assets/icons/users-ink.svg" alt=""></span></div></div>
+          <div class="grow"><h5 style="margin:0;font-size:15px;" id="chat-header-name">&nbsp;</h5><span style="font-size:12px;color:var(--grey-light);" id="chat-header-sub"></span></div>
         </div>
-        <div class="safety-banner"><span class="icon "><img src="assets/icons/shield-ink.svg" alt=""></span> For everyone's safety, PetLoop's Trust &amp; Safety team may review conversations in the Matchmaking &amp; Marketplace inbox.</div>
-        <div class="chat-body">
-          <div class="msg in">Hi! Simba's profile looks great — is she still available for a match this season?</div>
-          <div class="msg out">Hi Karim, yes she is! Her vaccination and certificate are both up to date.</div>
-          <div class="msg in">Perfect, would you be open to meeting this Saturday? We can do a supervised meet-up first.</div>
-          <div class="msg out">Sure, Saturday works great for us!</div>
-        </div>
-        <div class="chat-input">
-          <input type="text" placeholder="Type a message...">
-          <a href="#" class="btn btn-coral btn-icon"><span class="icon "><img src="assets/icons/paper-plane-white.svg" alt=""></span></a>
-        </div>
+        <div class="safety-banner"><span class="icon "><img src="assets/icons/shield-ink.svg" alt=""></span> For everyone's safety, PetLoop's Trust &amp; Safety team may review conversations.</div>
+        <div class="chat-body" id="chat-body"></div>
+        <form class="chat-input" id="chat-send-form">
+          <input type="text" id="chat-message-input" placeholder="Type a message..." autocomplete="off" required>
+          <button type="submit" class="btn btn-coral btn-icon"><span class="icon "><img src="assets/icons/paper-plane-white.svg" alt=""></span></button>
+        </form>
+      </div>
+      <div id="chat-no-conversation" style="flex:1;display:flex;align-items:center;justify-content:center;color:var(--grey-light);padding:40px;text-align:center;">
+        Select a conversation, or message someone from their pet profile or a marketplace listing to start one.
       </div>
     </div>
   </div>
@@ -169,5 +154,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/chat.js"></script>
 </body>
 </html>

@@ -38,10 +38,10 @@
       <nav class="nav-links">
       <a href="shop.html">Shop</a>
       <a href="feed.html">Community</a>
-      <a href="matchmaking.html" class="active">Matchmaking</a>
-      <a href="walks.html" class="active">Dog Walks</a>
+      <a href="matchmaking.html">Matchmaking</a>
+      <a href="walks.html">Dog Walks</a>
       <a href="grooming.html" class="active">Grooming</a>
-      <a href="pharmacy.html" class="active">Pharmacy</a>
+      <a href="pharmacy.html">Pharmacy</a>
       <a href="marketplace.html">Marketplace</a>
       </nav>
       <div class="header-actions">
@@ -54,46 +54,46 @@
   </div>
 </header>
 
-<section class="section section--tight">
+<section class="section section--tight" id="groomer-root" style="display:none;">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="grooming.html">Grooming</a> / Whiskers &amp; Co.</div>
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="grooming.html">Grooming</a> / <span id="groomer-breadcrumb-name">Groomer</span></div>
     <div class="pdp-grid">
       <div>
-        <div class="pdp-gallery-main"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span></div>
-        <h1 style="font-size:26px;">Whiskers &amp; Co. Grooming</h1>
-        <div class="stars" style="margin-bottom:10px;"><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span><span class="icon "><img src="assets/icons/star-gold.svg" alt=""></span> <span style="color:var(--grey);">5.0 &middot; 212 reviews</span></div>
-        <div style="color:var(--grey-light);font-size:14px;margin-bottom:16px;"><span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Road 9, Maadi, Cairo &middot; Open today until 8:00 PM</div>
-        <p>Full-service grooming studio specializing in dogs and cats of all sizes &mdash; from bath &amp; brush to breed-specific styling. PetLoop-verified and insured.</p>
+        <div class="pdp-gallery-main" id="groomer-gallery-main"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span></div>
+        <h1 style="font-size:26px;" id="groomer-name">&nbsp;</h1>
+        <div class="stars" style="margin-bottom:10px;" id="groomer-stars"></div>
+        <div style="color:var(--grey-light);font-size:14px;margin-bottom:16px;" id="groomer-location"></div>
+        <p id="groomer-bio"></p>
         <h3>Services &amp; Pricing</h3>
-        <div class="spec-list">
-          <div class="row"><span>Bath &amp; Brush</span><span>EGP 250</span></div>
-          <div class="row"><span>Full Groom (wash, cut, style)</span><span>EGP 350</span></div>
-          <div class="row"><span>Nail Trim</span><span>EGP 80</span></div>
-          <div class="row"><span>De-shedding Treatment</span><span>EGP 300</span></div>
-        </div>
+        <div class="spec-list" id="groomer-services-list"></div>
       </div>
       <div>
-        <div class="card">
+        <div class="card" id="groomer-booking-card">
           <h3 class="mt-0">Book an Appointment</h3>
-          <div class="form-field"><label>Pet</label><select><option>Simba (Golden Retriever)</option><option>Mishmish (Egyptian Mau)</option></select></div>
-          <div class="form-field"><label>Service</label><select><option>Full Groom &mdash; EGP 350</option><option>Bath &amp; Brush &mdash; EGP 250</option><option>Nail Trim &mdash; EGP 80</option></select></div>
-          <div class="form-field"><label>Date</label><input type="date"></div>
-          <label style="font-size:13.5px;font-weight:700;display:block;margin-bottom:8px;">Available Times</label>
-          <div class="slot-grid">
-            <div class="slot active">9:00 AM</div>
-            <div class="slot">10:00 AM</div>
-            <div class="slot taken">11:00 AM</div>
-            <div class="slot">1:00 PM</div>
-            <div class="slot">2:30 PM</div>
-            <div class="slot taken">4:00 PM</div>
-            <div class="slot">5:30 PM</div>
-            <div class="slot">7:00 PM</div>
+          <div id="groomer-booking-signed-out" style="display:none;">
+            <p class="form-hint">Log in to book an appointment.</p>
+            <a href="account.html" class="btn btn-coral btn-block" id="groomer-login-link">Log In</a>
           </div>
-          <a href="account.html" class="btn btn-coral btn-block" style="margin-top:20px;">Confirm Booking &mdash; EGP 350</a>
-          <p class="form-hint" style="text-align:center;">PetLoop commission (15%) is included &mdash; no extra fees for you.</p>
+          <form id="groomer-booking-form" style="display:none;">
+            <div class="form-field"><label>Pet</label><select id="groomer-booking-pet" required></select></div>
+            <div class="form-field"><label>Service</label><select id="groomer-booking-service" required></select></div>
+            <div class="form-field"><label>Date</label><input type="date" id="groomer-booking-date" required></div>
+            <label style="font-size:13.5px;font-weight:700;display:block;margin-bottom:8px;">Available Times</label>
+            <div class="slot-grid" id="groomer-slot-grid"><p class="form-hint">Pick a date to see available times.</p></div>
+            <div id="groomer-booking-status" class="form-hint" style="display:none;margin-top:12px;padding:12px 14px;border-radius:10px;"></div>
+            <button type="submit" class="btn btn-coral btn-block" style="margin-top:20px;" id="groomer-booking-submit" disabled>Confirm Booking</button>
+            <p class="form-hint" style="text-align:center;">PetLoop commission (15%) is included &mdash; no extra fees for you.</p>
+          </form>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section" id="groomer-not-found" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <h2>Groomer not found</h2>
+    <a href="grooming.html" class="btn btn-coral">Back to Grooming</a>
   </div>
 </section>
 
@@ -157,5 +157,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/groomer-profile.js"></script>
 </body>
 </html>

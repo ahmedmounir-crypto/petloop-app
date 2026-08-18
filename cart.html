@@ -58,64 +58,34 @@
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a> / Cart</div>
     <h1>Your Cart</h1>
-    <p class="lede">3 items ready for checkout.</p>
+    <p class="lede" id="cart-item-count-lede">Loading your cart...</p>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="cart-signed-out" style="display:none;">
+  <div class="container-narrow" style="text-align:center;">
+    <h2>Log in to see your cart</h2>
+    <p>Your cart is tied to your PetLoop account.</p>
+    <a href="account.html?next=cart.html" class="btn btn-coral">Log In</a>
+  </div>
+</section>
+
+<section class="section" id="cart-root" style="display:none;">
   <div class="container">
     <div class="pdp-grid">
       <div>
-        
-      <div class="cart-row">
-        <div class="cart-thumb"><span class="icon "><img src="assets/icons/bone-grey.svg" alt=""></span></div>
-        <div class="grow">
-          <span class="cat" style="font-size:11px;font-weight:700;color:var(--coral-deep);text-transform:uppercase;">Dog Food</span>
-          <h4>Grain-Free Chicken & Rice Adult Formula, 12kg</h4>
-          <div class="qty-stepper" style="display:inline-flex;"><button>&minus;</button><span>1</span><button>+</button></div>
-        </div>
-        <div style="text-align:right;">
-          <div class="price">EGP 1,240</div>
-          <a href="#" style="font-size:12.5px;color:var(--grey-light);">Remove</a>
-        </div>
-      </div>
-        
-      <div class="cart-row">
-        <div class="cart-thumb"><span class="icon "><img src="assets/icons/paw-grey.svg" alt=""></span></div>
-        <div class="grow">
-          <span class="cat" style="font-size:11px;font-weight:700;color:var(--coral-deep);text-transform:uppercase;">Cat Toys</span>
-          <h4>Feather Wand & Catnip Mouse Set</h4>
-          <div class="qty-stepper" style="display:inline-flex;"><button>&minus;</button><span>2</span><button>+</button></div>
-        </div>
-        <div style="text-align:right;">
-          <div class="price">EGP 220</div>
-          <a href="#" style="font-size:12.5px;color:var(--grey-light);">Remove</a>
-        </div>
-      </div>
-        
-      <div class="cart-row">
-        <div class="cart-thumb"><span class="icon "><img src="assets/icons/pills-grey.svg" alt=""></span></div>
-        <div class="grow">
-          <span class="cat" style="font-size:11px;font-weight:700;color:var(--coral-deep);text-transform:uppercase;">Pharmacy</span>
-          <h4>Flea & Tick Prevention Chewables (3-pack)</h4>
-          <div class="qty-stepper" style="display:inline-flex;"><button>&minus;</button><span>1</span><button>+</button></div>
-        </div>
-        <div style="text-align:right;">
-          <div class="price">EGP 780</div>
-          <a href="#" style="font-size:12.5px;color:var(--grey-light);">Remove</a>
-        </div>
-      </div>
+        <div id="cart-items-list"></div>
+        <p class="form-hint" id="cart-empty-msg" style="display:none;">Your cart is empty.</p>
         <a href="shop.html" class="btn btn-outline-ink" style="margin-top:24px;"><span class="icon "><img src="assets/icons/arrow-right-ink.svg" alt=""></span> Continue Shopping</a>
       </div>
       <div>
         <div class="summary-card">
           <h3 class="mt-0">Order Summary</h3>
-          <div class="summary-row"><span>Subtotal</span><span>EGP 2,460</span></div>
-          <div class="summary-row"><span>Delivery</span><span>EGP 60</span></div>
-          <div class="summary-row"><span>Promo (WELCOME10)</span><span style="color:var(--green);">&minus;EGP 246</span></div>
-          <div class="summary-row total"><span>Total</span><span>EGP 2,274</span></div>
-          <a href="checkout.html" class="btn btn-coral btn-block" style="margin-top:20px;">Proceed to Checkout</a>
-          <p class="form-hint" style="text-align:center;margin-top:14px;"><span class="icon "><img src="assets/icons/shield-grey.svg" alt=""></span> Secure checkout &middot; Rx items require prescription verification</p>
+          <div class="summary-row"><span>Subtotal</span><span id="cart-subtotal">EGP 0</span></div>
+          <div class="summary-row"><span>Delivery</span><span id="cart-delivery">EGP 60</span></div>
+          <div class="summary-row total"><span>Total</span><span id="cart-total">EGP 0</span></div>
+          <a href="checkout.html" class="btn btn-coral btn-block" id="cart-checkout-btn" style="margin-top:20px;">Proceed to Checkout</a>
+          <p class="form-hint" style="text-align:center;margin-top:14px;"><span class="icon "><img src="assets/icons/shield-grey.svg" alt=""></span> Secure checkout &middot; Cash on delivery</p>
         </div>
       </div>
     </div>
@@ -182,5 +152,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/cart.js"></script>
 </body>
 </html>

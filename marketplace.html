@@ -69,131 +69,14 @@
     <div class="shop-layout">
       <aside>
         <div class="filter-box">
-          <h5>Species</h5>
-          <label class="filter-row"><input type="checkbox" checked> Dogs</label>
-          <label class="filter-row"><input type="checkbox" checked> Cats</label>
-          <label class="filter-row"><input type="checkbox"> Birds</label>
-          <label class="filter-row"><input type="checkbox"> Fish</label>
-          <label class="filter-row"><input type="checkbox"> Rabbits</label>
-          <label class="filter-row"><input type="checkbox"> Reptiles</label>
-        </div>
-        <div class="filter-box">
-          <h5>Verification</h5>
-          <label class="filter-row"><input type="checkbox" checked> Verified certificate</label>
-          <label class="filter-row"><input type="checkbox" checked> Vaccinated</label>
-        </div>
-        <div class="filter-box">
-          <h5>Price Range (EGP)</h5>
-          <label class="filter-row"><input type="checkbox"> Under 2,000</label>
-          <label class="filter-row"><input type="checkbox" checked> 2,000 &ndash; 8,000</label>
-          <label class="filter-row"><input type="checkbox"> 8,000+</label>
-        </div>
-        <div class="filter-box">
-          <h5>Location</h5>
-          <div class="form-field" style="margin:0;"><input type="text" value="Cairo, Egypt"></div>
+          <h5>Category</h5>
+          <div id="marketplace-category-filters"><label class="filter-row"><input type="checkbox" checked disabled> Loading...</label></div>
         </div>
       </aside>
       <div>
-        <div class="sort-row"><span style="font-size:14px;color:var(--grey);">312 listings in Cairo</span><select class="select-pill"><option>Sort: Newest</option><option>Sort: Verified First</option><option>Sort: Price Low to High</option></select></div>
-        <div class="listing-grid">
-          
-      <div class="listing-card">
-        <div class="listing-media"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span><span class="badge-pill badge-gold" style="position:absolute;top:10px;left:10px;"><span class="icon "><img src="assets/icons/certificate-gold.svg" alt=""></span> Verified</span></div>
-        <div class="listing-body">
-          <h4>Golden Retriever Puppies (litter of 4)</h4>
-          <div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">8 weeks &middot; <span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> New Cairo</div>
-          <div class="flex gap-8" style="margin-bottom:10px;">
-            <span class="badge-pill badge-green" style="font-size:11px;"><span class="icon "><img src="assets/icons/syringe-green.svg" alt=""></span> Vaccinated</span>
-          </div>
-          <div class="price-row"><span class="listing-price">EGP 6,500</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div>
-        </div>
-      </div>
-          
-      <div class="listing-card">
-        <div class="listing-media"><span class="icon "><img src="assets/icons/cat-ink.svg" alt=""></span><span class="badge-pill badge-gold" style="position:absolute;top:10px;left:10px;"><span class="icon "><img src="assets/icons/certificate-gold.svg" alt=""></span> Verified</span></div>
-        <div class="listing-body">
-          <h4>Egyptian Mau Kitten</h4>
-          <div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">10 weeks &middot; <span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Zamalek</div>
-          <div class="flex gap-8" style="margin-bottom:10px;">
-            <span class="badge-pill badge-green" style="font-size:11px;"><span class="icon "><img src="assets/icons/syringe-green.svg" alt=""></span> Vaccinated</span>
-          </div>
-          <div class="price-row"><span class="listing-price">EGP 3,200</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div>
-        </div>
-      </div>
-          
-      <div class="listing-card">
-        <div class="listing-media"><span class="icon "><img src="assets/icons/bird-ink.svg" alt=""></span></div>
-        <div class="listing-body">
-          <h4>Pair of Lovebirds</h4>
-          <div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">6 months &middot; <span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Heliopolis</div>
-          <div class="flex gap-8" style="margin-bottom:10px;">
-            <span class="badge-pill badge-grey" style="font-size:11px;">Vaccination unknown</span>
-          </div>
-          <div class="price-row"><span class="listing-price">EGP 900</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div>
-        </div>
-      </div>
-          
-      <div class="listing-card">
-        <div class="listing-media"><span class="icon "><img src="assets/icons/dog-ink.svg" alt=""></span><span class="badge-pill badge-gold" style="position:absolute;top:10px;left:10px;"><span class="icon "><img src="assets/icons/certificate-gold.svg" alt=""></span> Verified</span></div>
-        <div class="listing-body">
-          <h4>German Shepherd, Adult</h4>
-          <div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">2 years &middot; <span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> 6th of October City</div>
-          <div class="flex gap-8" style="margin-bottom:10px;">
-            <span class="badge-pill badge-green" style="font-size:11px;"><span class="icon "><img src="assets/icons/syringe-green.svg" alt=""></span> Vaccinated</span>
-          </div>
-          <div class="price-row"><span class="listing-price">EGP 4,800</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div>
-        </div>
-      </div>
-          
-      <div class="listing-card">
-        <div class="listing-media"><span class="icon "><img src="assets/icons/rabbit-ink.svg" alt=""></span></div>
-        <div class="listing-body">
-          <h4>Holland Lop Rabbit</h4>
-          <div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">4 months &middot; <span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Maadi</div>
-          <div class="flex gap-8" style="margin-bottom:10px;">
-            <span class="badge-pill badge-green" style="font-size:11px;"><span class="icon "><img src="assets/icons/syringe-green.svg" alt=""></span> Vaccinated</span>
-          </div>
-          <div class="price-row"><span class="listing-price">EGP 650</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div>
-        </div>
-      </div>
-          
-      <div class="listing-card">
-        <div class="listing-media"><span class="icon "><img src="assets/icons/fish-ink.svg" alt=""></span></div>
-        <div class="listing-body">
-          <h4>Freshwater Aquarium Set + Fish</h4>
-          <div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">N/A &middot; <span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Nasr City</div>
-          <div class="flex gap-8" style="margin-bottom:10px;">
-            <span class="badge-pill badge-grey" style="font-size:11px;">Vaccination unknown</span>
-          </div>
-          <div class="price-row"><span class="listing-price">EGP 1,400</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div>
-        </div>
-      </div>
-          
-      <div class="listing-card">
-        <div class="listing-media"><span class="icon "><img src="assets/icons/cat-ink.svg" alt=""></span><span class="badge-pill badge-gold" style="position:absolute;top:10px;left:10px;"><span class="icon "><img src="assets/icons/certificate-gold.svg" alt=""></span> Verified</span></div>
-        <div class="listing-body">
-          <h4>Persian Kitten, Purebred</h4>
-          <div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">12 weeks &middot; <span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> New Cairo</div>
-          <div class="flex gap-8" style="margin-bottom:10px;">
-            <span class="badge-pill badge-green" style="font-size:11px;"><span class="icon "><img src="assets/icons/syringe-green.svg" alt=""></span> Vaccinated</span>
-          </div>
-          <div class="price-row"><span class="listing-price">EGP 5,500</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div>
-        </div>
-      </div>
-          
-      <div class="listing-card">
-        <div class="listing-media"><span class="icon "><img src="assets/icons/turtle-ink.svg" alt=""></span></div>
-        <div class="listing-body">
-          <h4>Red-Eared Slider Turtle + Tank</h4>
-          <div style="font-size:12.5px;color:var(--grey-light);margin-bottom:8px;">1 year &middot; <span class="icon "><img src="assets/icons/map-pin-grey.svg" alt=""></span> Giza</div>
-          <div class="flex gap-8" style="margin-bottom:10px;">
-            <span class="badge-pill badge-grey" style="font-size:11px;">Vaccination unknown</span>
-          </div>
-          <div class="price-row"><span class="listing-price">EGP 750</span><a href="listing-detail.html" class="btn btn-outline-ink btn-sm">View</a></div>
-        </div>
-      </div>
-        </div>
-        <div class="center-btns"><a href="#" class="btn btn-outline-ink">Load More Listings</a></div>
+        <div class="sort-row"><span style="font-size:14px;color:var(--grey);" id="marketplace-count-label">Loading listings...</span><select class="select-pill" id="marketplace-sort"><option value="newest">Sort: Newest</option><option value="price-asc">Sort: Price Low to High</option><option value="price-desc">Sort: Price High to Low</option></select></div>
+        <div class="listing-grid" id="marketplace-grid"></div>
+        <p class="form-hint" id="marketplace-empty" style="display:none;text-align:center;">No listings yet &mdash; be the first to <a href="sell-pet.html">list a pet</a>!</p>
       </div>
     </div>
   </div>
@@ -259,5 +142,8 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/marketplace.js"></script>
 </body>
 </html>
