@@ -72,7 +72,29 @@
         <div class="form-field"><label>Password</label><input id="login-password" type="password" placeholder="Your password" required></div>
         <button type="submit" class="btn btn-coral btn-block" id="login-submit">Log In</button>
       </form>
-      <p class="form-hint" style="text-align:center;margin-top:14px;">New to PetLoop? <a href="register.html">Create a pet profile</a> to sign up.</p>
+      <p class="form-hint" style="text-align:center;margin-top:10px;"><a href="#" id="forgot-password-link">Forgot your password?</a></p>
+      <p class="form-hint" style="text-align:center;margin-top:4px;">New to PetLoop? <a href="register.html">Create a pet profile</a> to sign up.</p>
+    </div>
+
+    <div class="card" id="forgot-password-card" style="display:none;margin-top:18px;">
+      <h3 class="mt-0">Reset Your Password</h3>
+      <p class="form-hint">Enter your account email and we'll send you a link to set a new password.</p>
+      <form id="forgot-password-form" novalidate>
+        <div class="form-field"><label>Email Address</label><input id="forgot-email" type="email" placeholder="you@email.com" required></div>
+        <div id="forgot-status" class="form-hint" style="display:none;margin-bottom:12px;padding:12px 14px;border-radius:10px;"></div>
+        <button type="submit" class="btn btn-coral btn-block" id="forgot-submit">Send Reset Link</button>
+      </form>
+      <p class="form-hint" style="text-align:center;margin-top:14px;"><a href="#" id="back-to-login-link">Back to log in</a></p>
+    </div>
+
+    <div class="card" id="set-new-password-card" style="display:none;margin-top:18px;">
+      <h3 class="mt-0">Choose a New Password</h3>
+      <p class="form-hint">You followed a reset link — set a new password below to finish.</p>
+      <form id="set-new-password-form" novalidate>
+        <div class="form-field"><label>New Password</label><input id="new-password" type="password" placeholder="At least 6 characters" required minlength="6"></div>
+        <div id="new-password-status" class="form-hint" style="display:none;margin-bottom:12px;padding:12px 14px;border-radius:10px;"></div>
+        <button type="submit" class="btn btn-coral btn-block" id="new-password-submit">Save New Password</button>
+      </form>
     </div>
   </div>
 </section>
