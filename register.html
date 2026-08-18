@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Your Pet's Profile | PetLoop</title>
+<meta name="description" content="Register your pet — any species — with vaccination status and breeding certificates.">
+<link rel="icon" type="image/svg+xml" href="assets/brand/logomark-coral.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-links">
+        <a href="grooming.html">Become a Grooming Partner</a>
+        <a href="sell-pet.html">Sell on PetLoop</a>
+        <a href="pharmacy.html">Licensed Pharmacy</a>
+      </div>
+      <div class="header-top-links">
+        <a href="account.html">Help Center</a>
+        <a href="admin.html">Trust &amp; Safety Console</a>
+      </div>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img class="mark" src="assets/brand/logomark-coral.svg" alt="">
+        <span class="word">Pet<b>Loop</b></span>
+      </a>
+      <div class="search-bar">
+        <span class="icon "><img src="assets/icons/search-grey.svg" alt=""></span>
+        <input type="text" placeholder="Search food, breeds, groomers, pets for sale...">
+      </div>
+      <nav class="nav-links">
+      <a href="shop.html">Shop</a>
+      <a href="feed.html" class="active">Community</a>
+      <a href="matchmaking.html">Matchmaking</a>
+      <a href="walks.html">Dog Walks</a>
+      <a href="grooming.html">Grooming</a>
+      <a href="pharmacy.html">Pharmacy</a>
+      <a href="marketplace.html">Marketplace</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="icon-btn" title="Account"><span class="icon "><img src="assets/icons/users-ink.svg" alt=""></span></a>
+        <a href="cart.html" class="icon-btn" title="Cart"><span class="icon "><img src="assets/icons/cart-ink.svg" alt=""></span><span class="count">3</span></a>
+        <a href="register.html" class="btn btn-coral btn-sm">Sign Up</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Create a Pet Profile</div>
+    <span class="eyebrow"><span class="icon "><img src="assets/icons/paw-gold.svg" alt=""></span> Free &middot; Takes 3 minutes</span>
+    <h1>Register You &amp; Your Pet</h1>
+    <p class="lede">Every species welcome. Add vaccination status and breeding certificates now, or update them anytime from your dashboard.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-narrow">
+  <form id="register-form" novalidate>
+
+    <div id="register-status" class="form-hint" style="display:none;margin-bottom:16px;padding:12px 14px;border-radius:10px;"></div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <h3 class="mt-0">1. Your Details</h3>
+      <div class="form-grid">
+        <div class="form-field"><label>Full Name</label><input id="reg-name" type="text" placeholder="Ahmed Mounir" required></div>
+        <div class="form-field"><label>Phone Number</label><input id="reg-phone" type="tel" placeholder="+20 1xx xxx xxxx"></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field"><label>Email Address</label><input id="reg-email" type="email" placeholder="you@email.com" required></div>
+        <div class="form-field"><label>City</label><input id="reg-city" type="text" placeholder="Cairo"></div>
+      </div>
+      <div class="form-field"><label>Password</label><input id="reg-password" type="password" placeholder="Create a password (min. 6 characters)" minlength="6" required></div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <h3 class="mt-0">2. Add Your Pet</h3>
+      <p>Select a species &mdash; all pet types can register on PetLoop.</p>
+      <input type="hidden" id="pet-species" value="Dog">
+      <div class="species-picker" id="species-picker" style="margin-bottom:24px;">
+        <div class="species-opt active" data-species="Dog"><span class="icon "><img src="assets/icons/dog-coral.svg" alt=""></span><span>Dog</span></div>
+        <div class="species-opt" data-species="Cat"><span class="icon "><img src="assets/icons/cat-ink.svg" alt=""></span><span>Cat</span></div>
+        <div class="species-opt" data-species="Bird"><span class="icon "><img src="assets/icons/bird-ink.svg" alt=""></span><span>Bird</span></div>
+        <div class="species-opt" data-species="Fish"><span class="icon "><img src="assets/icons/fish-ink.svg" alt=""></span><span>Fish</span></div>
+        <div class="species-opt" data-species="Rabbit"><span class="icon "><img src="assets/icons/rabbit-ink.svg" alt=""></span><span>Rabbit</span></div>
+        <div class="species-opt" data-species="Reptile"><span class="icon "><img src="assets/icons/turtle-ink.svg" alt=""></span><span>Reptile</span></div>
+        <div class="species-opt" data-species="Horse"><span class="icon "><img src="assets/icons/horse-ink.svg" alt=""></span><span>Horse</span></div>
+        <div class="species-opt" data-species="Other"><span class="icon "><img src="assets/icons/paw-ink.svg" alt=""></span><span>Other</span></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field"><label>Pet Name</label><input id="pet-name" type="text" placeholder="Simba" required></div>
+        <div class="form-field"><label>Breed</label><input id="pet-breed" type="text" placeholder="Golden Retriever" list="breed-datalist" autocomplete="off"><datalist id="breed-datalist"></datalist></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field"><label>Date of Birth (approx.)</label><input id="pet-dob" type="date"></div>
+        <div class="form-field"><label>Gender</label><select id="pet-gender"><option>Male</option><option>Female</option></select></div>
+      </div>
+      <div class="form-field">
+        <label>Pet Photo</label>
+        <label class="upload-drop" id="pet-photo-drop" style="cursor:pointer;display:block;">
+          <span class="icon "><img src="assets/icons/camera-grey.svg" alt=""></span>
+          <div id="pet-photo-label">Drag &amp; drop a photo, or <b>browse files</b></div>
+          <input type="file" id="pet-photo" accept="image/*" style="display:none;">
+        </label>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px;">
+      <h3 class="mt-0"><span class="icon "><img src="assets/icons/syringe-coral.svg" alt=""></span> 3. Vaccination Status</h3>
+      <p>This will be shown on your pet's public profile so other owners, groomers and matches know their vaccination status.</p>
+      <div class="form-field">
+        <label>Vaccination Status</label>
+        <select id="pet-vaccination">
+          <option value="true">Fully Vaccinated</option>
+          <option value="false">Partially Vaccinated</option>
+          <option value="false">Not Yet Vaccinated</option>
+          <option value="false">Prefer not to say</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Upload Vaccination Record (optional)</label>
+        <label class="upload-drop" id="vax-record-drop" style="cursor:pointer;display:block;">
+          <span class="icon "><img src="assets/icons/upload-grey.svg" alt=""></span>
+          <div id="vax-record-label">Drag &amp; drop a vet record or certificate, or <b>browse files</b></div>
+          <input type="file" id="vax-record" accept="image/*,.pdf" style="display:none;">
+        </label>
+        <p class="form-hint">Kept private &mdash; only you and PetLoop's Trust &amp; Safety team can view it.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:32px;">
+      <h3 class="mt-0"><span class="icon "><img src="assets/icons/certificate-coral.svg" alt=""></span> 4. Breeding &amp; Matchmaking (Optional)</h3>
+      <p>Turn this on to list your pet for PetLoop's breed matchmaking. You can upload pedigree/championship certificates and complete owner verification right after creating this profile, from the pet's page.</p>
+      <div class="toggle-row">
+        <span>List this pet for matchmaking</span>
+        <div class="toggle on" id="matching-toggle"></div>
+      </div>
+      <input type="hidden" id="pet-listed-for-matching" value="true">
+    </div>
+
+    <button type="submit" class="btn btn-coral btn-block" id="register-submit"><span class="icon "><img src="assets/icons/paw-white.svg" alt=""></span> Create Profile</button>
+    <p class="form-hint" style="text-align:center;margin-top:14px;">By registering you agree to PetLoop's Terms of Service and Community Guidelines.</p>
+  </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-news">
+      <div>
+        <h3>Get the PetLoop app</h3>
+        <p>Shop, match, book grooming and find walk buddies on the go.</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="you@email.com">
+        <button class="btn btn-coral" type="submit">Notify Me</button>
+      </form>
+    </div>
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <img class="mark" src="assets/brand/logomark-cream.svg" alt="" style="width:34px;height:34px;">
+          <span class="word">Pet<b>Loop</b></span>
+        </a>
+        <p>Everything for your pet, in one loop &mdash; shop, social, matchmaking, walks, grooming, pharmacy and marketplace.</p>
+        <div class="footer-trust">
+          <span>Licensed Veterinary Pharmacy</span>
+          <span>Egypt-based</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">Pet Food</a>
+        <a href="shop.html">Accessories</a>
+        <a href="shop.html">Toys</a>
+        <a href="pharmacy.html">Pharmacy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="feed.html">Social Feed</a>
+        <a href="matchmaking.html">Breed Matchmaking</a>
+        <a href="walks.html">Dog Walks</a>
+        <a href="register.html">Create a Pet Profile</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="grooming.html">Grooming</a>
+        <a href="marketplace.html">Pet Marketplace</a>
+        <a href="sell-pet.html">List a Pet</a>
+        <a href="grooming.html">Become a Partner</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="admin.html">Trust &amp; Safety</a>
+        <a href="account.html">My Account</a>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; PetLoop. All rights reserved.</span>
+      <span>Licensed veterinary pharmacy &middot; Operating in Egypt</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/register.js"></script>
+</body>
+</html>

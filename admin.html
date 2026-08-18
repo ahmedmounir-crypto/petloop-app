@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust & Safety Console | PetLoop</title>
+<meta name="description" content="Internal dashboard for chat monitoring, certificate verification and groomer commissions.">
+<link rel="icon" type="image/svg+xml" href="assets/brand/logomark-coral.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-links">
+        <a href="grooming.html">Become a Grooming Partner</a>
+        <a href="sell-pet.html">Sell on PetLoop</a>
+        <a href="pharmacy.html">Licensed Pharmacy</a>
+      </div>
+      <div class="header-top-links">
+        <a href="account.html">Help Center</a>
+        <a href="admin.html">Trust &amp; Safety Console</a>
+      </div>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img class="mark" src="assets/brand/logomark-coral.svg" alt="">
+        <span class="word">Pet<b>Loop</b></span>
+      </a>
+      <div class="search-bar">
+        <span class="icon "><img src="assets/icons/search-grey.svg" alt=""></span>
+        <input type="text" placeholder="Search food, breeds, groomers, pets for sale...">
+      </div>
+      <nav class="nav-links">
+      <a href="shop.html">Shop</a>
+      <a href="feed.html">Community</a>
+      <a href="matchmaking.html">Matchmaking</a>
+      <a href="walks.html">Dog Walks</a>
+      <a href="grooming.html">Grooming</a>
+      <a href="pharmacy.html">Pharmacy</a>
+      <a href="marketplace.html">Marketplace</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="icon-btn" title="Account"><span class="icon "><img src="assets/icons/users-ink.svg" alt=""></span></a>
+        <a href="cart.html" class="icon-btn" title="Cart"><span class="icon "><img src="assets/icons/cart-ink.svg" alt=""></span><span class="count">3</span></a>
+        <a href="register.html" class="btn btn-coral btn-sm">Sign Up</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Trust &amp; Safety Console</div>
+    <span class="eyebrow"><span class="icon "><img src="assets/icons/shield-gold.svg" alt=""></span> Internal &mdash; Staff Only</span>
+    <h1>Trust &amp; Safety Console</h1>
+    <p class="lede">Certificate verification queue, monitored conversations, and grooming partner commissions &mdash; the internal dashboard behind PetLoop's safety features.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="shop-layout">
+      <aside>
+        <div class="filter-box" style="padding:14px;">
+          <nav class="sidebar-nav">
+            <a href="#" class="active"><span class="icon "><img src="assets/icons/house-white.svg" alt=""></span> Overview</a>
+            <a href="#"><span class="icon "><img src="assets/icons/certificate-ink.svg" alt=""></span> Certificate Queue</a>
+            <a href="#"><span class="icon "><img src="assets/icons/comments-ink.svg" alt=""></span> Chat Monitoring</a>
+            <a href="#"><span class="icon "><img src="assets/icons/store-ink.svg" alt=""></span> Listing Reviews</a>
+            <a href="#"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span> Groomer Commissions</a>
+            <a href="#"><span class="icon "><img src="assets/icons/kit-medical-ink.svg" alt=""></span> Rx Order Queue</a>
+          </nav>
+        </div>
+      </aside>
+      <div>
+        <div id="admin-staff-only" class="card" style="display:none;margin-bottom:20px;background:#FBE8E4;border-color:#f0c4bb;">
+          <h3 class="mt-0" style="color:#B23B2E;">Staff Only</h3>
+          <p style="margin:0;">You're viewing sample layout only &mdash; log in with an admin account to see and act on real submissions. The database enforces this regardless of what this page shows.</p>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-tile"><span>Certificates Pending</span><strong id="stat-certs-pending">&mdash;</strong></div>
+          <div class="stat-tile"><span>Owner Verifications Pending</span><strong id="stat-verifications-pending">&mdash;</strong></div>
+          <div class="stat-tile"><span>Pending Rx Reviews</span><strong>12 <span class="badge-pill badge-grey" style="font-size:10px;">Sample</span></strong></div>
+          <div class="stat-tile"><span>Groomer Payouts (Wk)</span><strong>EGP 41,200 <span class="badge-pill badge-grey" style="font-size:10px;">Sample</span></strong></div>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <h3 class="mt-0"><span class="icon "><img src="assets/icons/certificate-coral.svg" alt=""></span> Certificate Verification Queue</h3>
+          <table class="admin-table" id="cert-queue-table">
+            <tr><th>Pet</th><th>Owner</th><th>Type</th><th>Submitted</th><th>Action</th></tr>
+          </table>
+          <p class="form-hint" id="cert-queue-empty" style="display:none;">Nothing pending review.</p>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <h3 class="mt-0"><span class="icon "><img src="assets/icons/shield-coral.svg" alt=""></span> Owner Verification Queue</h3>
+          <table class="admin-table" id="verify-queue-table">
+            <tr><th>Owner</th><th>Photo</th><th>Video</th><th>Submitted</th><th>Action</th></tr>
+          </table>
+          <p class="form-hint" id="verify-queue-empty" style="display:none;">Nothing pending review.</p>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <h3 class="mt-0"><span class="icon "><img src="assets/icons/comments-coral.svg" alt=""></span> Flagged Conversations</h3>
+          <table class="admin-table">
+            <tr><th>Thread</th><th>Reason</th><th>Status</th><th>Action</th></tr>
+            <tr><td>Karim H. &amp; Ahmed M. (Match)</td><td>Keyword flag: off-platform payment</td><td><span class="badge-pill badge-gold">Needs Review</span></td><td><a href="chat.html" class="btn btn-sm btn-outline-ink">Open</a></td></tr>
+            <tr><td>Marketplace: Tabby Kittens</td><td>User reported</td><td><span class="badge-pill badge-gold">Needs Review</span></td><td><a href="chat.html" class="btn btn-sm btn-outline-ink">Open</a></td></tr>
+            <tr><td>Sara &amp; Groomer Partner</td><td>Routine spot-check</td><td><span class="badge-pill badge-green">Cleared</span></td><td><a href="chat.html" class="btn btn-sm btn-outline-ink">Open</a></td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3 class="mt-0"><span class="icon "><img src="assets/icons/scissors-coral.svg" alt=""></span> Groomer Commission Overview</h3>
+          <table class="admin-table">
+            <tr><th>Partner</th><th>Bookings (Wk)</th><th>Gross</th><th>Commission (15%)</th></tr>
+            <tr><td>Whiskers &amp; Co. Grooming</td><td>34</td><td>EGP 11,900</td><td>EGP 1,785</td></tr>
+            <tr><td>The Fluff House</td><td>28</td><td>EGP 9,800</td><td>EGP 1,470</td></tr>
+            <tr><td>Pawlish Studio</td><td>19</td><td>EGP 5,320</td><td>EGP 798</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-news">
+      <div>
+        <h3>Get the PetLoop app</h3>
+        <p>Shop, match, book grooming and find walk buddies on the go.</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="you@email.com">
+        <button class="btn btn-coral" type="submit">Notify Me</button>
+      </form>
+    </div>
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <img class="mark" src="assets/brand/logomark-cream.svg" alt="" style="width:34px;height:34px;">
+          <span class="word">Pet<b>Loop</b></span>
+        </a>
+        <p>Everything for your pet, in one loop &mdash; shop, social, matchmaking, walks, grooming, pharmacy and marketplace.</p>
+        <div class="footer-trust">
+          <span>Licensed Veterinary Pharmacy</span>
+          <span>Egypt-based</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">Pet Food</a>
+        <a href="shop.html">Accessories</a>
+        <a href="shop.html">Toys</a>
+        <a href="pharmacy.html">Pharmacy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="feed.html">Social Feed</a>
+        <a href="matchmaking.html">Breed Matchmaking</a>
+        <a href="walks.html">Dog Walks</a>
+        <a href="register.html">Create a Pet Profile</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="grooming.html">Grooming</a>
+        <a href="marketplace.html">Pet Marketplace</a>
+        <a href="sell-pet.html">List a Pet</a>
+        <a href="grooming.html">Become a Partner</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="admin.html">Trust &amp; Safety</a>
+        <a href="account.html">My Account</a>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; PetLoop. All rights reserved.</span>
+      <span>Licensed veterinary pharmacy &middot; Operating in Egypt</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

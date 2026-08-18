@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — Food, Accessories & Toys | PetLoop</title>
+<meta name="description" content="Browse pet food, accessories and toys for every species.">
+<link rel="icon" type="image/svg+xml" href="assets/brand/logomark-coral.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-links">
+        <a href="grooming.html">Become a Grooming Partner</a>
+        <a href="sell-pet.html">Sell on PetLoop</a>
+        <a href="pharmacy.html">Licensed Pharmacy</a>
+      </div>
+      <div class="header-top-links">
+        <a href="account.html">Help Center</a>
+        <a href="admin.html">Trust &amp; Safety Console</a>
+      </div>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img class="mark" src="assets/brand/logomark-coral.svg" alt="">
+        <span class="word">Pet<b>Loop</b></span>
+      </a>
+      <div class="search-bar">
+        <span class="icon "><img src="assets/icons/search-grey.svg" alt=""></span>
+        <input type="text" placeholder="Search food, breeds, groomers, pets for sale...">
+      </div>
+      <nav class="nav-links">
+      <a href="shop.html" class="active">Shop</a>
+      <a href="feed.html">Community</a>
+      <a href="matchmaking.html">Matchmaking</a>
+      <a href="walks.html">Dog Walks</a>
+      <a href="grooming.html">Grooming</a>
+      <a href="pharmacy.html">Pharmacy</a>
+      <a href="marketplace.html">Marketplace</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="icon-btn" title="Account"><span class="icon "><img src="assets/icons/users-ink.svg" alt=""></span></a>
+        <a href="cart.html" class="icon-btn" title="Cart"><span class="icon "><img src="assets/icons/cart-ink.svg" alt=""></span><span class="count">3</span></a>
+        <a href="register.html" class="btn btn-coral btn-sm">Sign Up</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Shop</div>
+    <span class="eyebrow"><span class="icon "><img src="assets/icons/bag-gold.svg" alt=""></span> Food &middot; Accessories &middot; Toys &middot; Pharmacy</span>
+    <h1>Everything your pet needs, delivered</h1>
+    <p class="lede">Curated food, accessories and toys for dogs, cats, birds, fish, rabbits and more &mdash; plus licensed pharmacy items when you need them.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="tabs" style="margin-bottom:32px;">
+      <a href="#" class="tab active">All Products</a>
+      <a href="#" class="tab">Food</a>
+      <a href="#" class="tab">Accessories</a>
+      <a href="#" class="tab">Toys</a>
+      <a href="pharmacy.html" class="tab">Pharmacy</a>
+    </div>
+    <div class="shop-layout">
+      <aside>
+        <div class="filter-box">
+          <h5>Species</h5>
+          <label class="filter-row"><input type="checkbox" checked> Dogs</label>
+          <label class="filter-row"><input type="checkbox" checked> Cats</label>
+          <label class="filter-row"><input type="checkbox"> Birds</label>
+          <label class="filter-row"><input type="checkbox"> Fish</label>
+          <label class="filter-row"><input type="checkbox"> Rabbits</label>
+          <label class="filter-row"><input type="checkbox"> Other</label>
+        </div>
+        <div class="filter-box">
+          <h5>Category</h5>
+          <label class="filter-row"><input type="checkbox" checked> Food &amp; Treats</label>
+          <label class="filter-row"><input type="checkbox"> Accessories</label>
+          <label class="filter-row"><input type="checkbox"> Toys</label>
+          <label class="filter-row"><input type="checkbox"> Grooming Supplies</label>
+          <label class="filter-row"><input type="checkbox"> Pharmacy</label>
+        </div>
+        <div class="filter-box">
+          <h5>Price Range (EGP)</h5>
+          <label class="filter-row"><input type="checkbox" checked> Under 300</label>
+          <label class="filter-row"><input type="checkbox"> 300 &ndash; 800</label>
+          <label class="filter-row"><input type="checkbox"> 800 &ndash; 1,500</label>
+          <label class="filter-row"><input type="checkbox"> 1,500+</label>
+        </div>
+        <div class="filter-box">
+          <h5>Brand</h5>
+          <label class="filter-row"><input type="checkbox" checked> PetLoop Essentials</label>
+          <label class="filter-row"><input type="checkbox"> Royal Whiskers</label>
+          <label class="filter-row"><input type="checkbox"> NileBite</label>
+          <label class="filter-row"><input type="checkbox"> Delta Naturals</label>
+        </div>
+      </aside>
+      <div>
+        <div class="sort-row">
+          <span style="font-size:14px; color:var(--grey);" id="product-count-label">Loading products…</span>
+          <select class="select-pill" id="product-sort"><option value="featured">Sort: Featured</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option></select>
+        </div>
+        <div class="tabs" id="category-tabs" style="margin:16px 0;">
+          <a href="#" class="tab active" data-category="all">All</a>
+          <a href="#" class="tab" data-category="Food">Food</a>
+          <a href="#" class="tab" data-category="Accessories">Accessories</a>
+        </div>
+        <div class="product-grid" style="grid-template-columns:repeat(3,1fr); margin-top:16px;" id="product-grid"></div>
+        <p class="form-hint" id="product-grid-empty" style="display:none;">No products yet &mdash; check back soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-news">
+      <div>
+        <h3>Get the PetLoop app</h3>
+        <p>Shop, match, book grooming and find walk buddies on the go.</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="you@email.com">
+        <button class="btn btn-coral" type="submit">Notify Me</button>
+      </form>
+    </div>
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <img class="mark" src="assets/brand/logomark-cream.svg" alt="" style="width:34px;height:34px;">
+          <span class="word">Pet<b>Loop</b></span>
+        </a>
+        <p>Everything for your pet, in one loop &mdash; shop, social, matchmaking, walks, grooming, pharmacy and marketplace.</p>
+        <div class="footer-trust">
+          <span>Licensed Veterinary Pharmacy</span>
+          <span>Egypt-based</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">Pet Food</a>
+        <a href="shop.html">Accessories</a>
+        <a href="shop.html">Toys</a>
+        <a href="pharmacy.html">Pharmacy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="feed.html">Social Feed</a>
+        <a href="matchmaking.html">Breed Matchmaking</a>
+        <a href="walks.html">Dog Walks</a>
+        <a href="register.html">Create a Pet Profile</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="grooming.html">Grooming</a>
+        <a href="marketplace.html">Pet Marketplace</a>
+        <a href="sell-pet.html">List a Pet</a>
+        <a href="grooming.html">Become a Partner</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="admin.html">Trust &amp; Safety</a>
+        <a href="account.html">My Account</a>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; PetLoop. All rights reserved.</span>
+      <span>Licensed veterinary pharmacy &middot; Operating in Egypt</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dog Walks Nearby | PetLoop</title>
+<meta name="description" content="Find nearby owners to walk with.">
+<link rel="icon" type="image/svg+xml" href="assets/brand/logomark-coral.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-links">
+        <a href="grooming.html">Become a Grooming Partner</a>
+        <a href="sell-pet.html">Sell on PetLoop</a>
+        <a href="pharmacy.html">Licensed Pharmacy</a>
+      </div>
+      <div class="header-top-links">
+        <a href="account.html">Help Center</a>
+        <a href="admin.html">Trust &amp; Safety Console</a>
+      </div>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img class="mark" src="assets/brand/logomark-coral.svg" alt="">
+        <span class="word">Pet<b>Loop</b></span>
+      </a>
+      <div class="search-bar">
+        <span class="icon "><img src="assets/icons/search-grey.svg" alt=""></span>
+        <input type="text" placeholder="Search food, breeds, groomers, pets for sale...">
+      </div>
+      <nav class="nav-links">
+      <a href="shop.html">Shop</a>
+      <a href="feed.html">Community</a>
+      <a href="matchmaking.html" class="active">Matchmaking</a>
+      <a href="walks.html" class="active">Dog Walks</a>
+      <a href="grooming.html" class="active">Grooming</a>
+      <a href="pharmacy.html" class="active">Pharmacy</a>
+      <a href="marketplace.html">Marketplace</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="icon-btn" title="Account"><span class="icon "><img src="assets/icons/users-ink.svg" alt=""></span></a>
+        <a href="cart.html" class="icon-btn" title="Cart"><span class="icon "><img src="assets/icons/cart-ink.svg" alt=""></span><span class="count">3</span></a>
+        <a href="register.html" class="btn btn-coral btn-sm">Sign Up</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Dog Walks</div>
+    <span class="eyebrow"><span class="icon "><img src="assets/icons/walking-gold.svg" alt=""></span> Walk Together</span>
+    <h1>Find a walk buddy nearby</h1>
+    <p class="lede">See who's heading out for a walk near you right now, or post your own walk and let nearby owners join in.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="split" style="align-items:flex-start;">
+      <div>
+        <form class="card" id="post-walk-form" style="margin-bottom:24px;">
+          <h3 class="mt-0"><span class="icon "><img src="assets/icons/plus-coral.svg" alt=""></span> Post a Walk</h3>
+          <div class="form-field"><label>Pet</label><select id="walk-pet-select"></select></div>
+          <div class="form-grid">
+            <div class="form-field"><label>Date &amp; Time</label><input type="datetime-local" id="walk-datetime" required></div>
+            <div class="form-field"><label>Meeting Point</label><input type="text" id="walk-location" placeholder="Maadi Corniche" required></div>
+          </div>
+          <div class="form-field"><label>Notes</label><textarea id="walk-notes" placeholder="Casual 30-min walk, friendly with other dogs"></textarea></div>
+          <div id="post-walk-status" class="form-hint" style="display:none;margin-bottom:12px;padding:12px 14px;border-radius:10px;"></div>
+          <button type="submit" class="btn btn-coral btn-block" id="post-walk-submit">Post Walk</button>
+        </form>
+        <div class="walk-map" style="width:100%;height:220px;">
+          <span class="icon "><img src="assets/icons/compass-coral.svg" alt=""></span>
+        </div>
+        <p class="form-hint" id="geo-hint" style="text-align:center;margin-top:10px;">We'll use your device location (if you allow it) to place your walk on the map and show distances.</p>
+      </div>
+      <div>
+        <div class="section-head-row" style="margin-bottom:20px;">
+          <h3 class="mt-0" id="walks-heading">Walks Near You</h3>
+          <select class="select-pill" id="walk-radius">
+            <option value="5">Within 5km</option>
+            <option value="2">Within 2km</option>
+            <option value="10">Within 10km</option>
+            <option value="9999">Any distance</option>
+          </select>
+        </div>
+        <div id="walks-map" style="width:100%;height:320px;border-radius:16px;overflow:hidden;margin-bottom:20px;background:var(--cream);"></div>
+        <div id="walk-list"></div>
+        <p class="form-hint" id="walk-list-empty" style="display:none;">No open walks nearby yet &mdash; be the first to post one!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-news">
+      <div>
+        <h3>Get the PetLoop app</h3>
+        <p>Shop, match, book grooming and find walk buddies on the go.</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="you@email.com">
+        <button class="btn btn-coral" type="submit">Notify Me</button>
+      </form>
+    </div>
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <img class="mark" src="assets/brand/logomark-cream.svg" alt="" style="width:34px;height:34px;">
+          <span class="word">Pet<b>Loop</b></span>
+        </a>
+        <p>Everything for your pet, in one loop &mdash; shop, social, matchmaking, walks, grooming, pharmacy and marketplace.</p>
+        <div class="footer-trust">
+          <span>Licensed Veterinary Pharmacy</span>
+          <span>Egypt-based</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">Pet Food</a>
+        <a href="shop.html">Accessories</a>
+        <a href="shop.html">Toys</a>
+        <a href="pharmacy.html">Pharmacy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="feed.html">Social Feed</a>
+        <a href="matchmaking.html">Breed Matchmaking</a>
+        <a href="walks.html">Dog Walks</a>
+        <a href="register.html">Create a Pet Profile</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="grooming.html">Grooming</a>
+        <a href="marketplace.html">Pet Marketplace</a>
+        <a href="sell-pet.html">List a Pet</a>
+        <a href="grooming.html">Become a Partner</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="admin.html">Trust &amp; Safety</a>
+        <a href="account.html">My Account</a>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; PetLoop. All rights reserved.</span>
+      <span>Licensed veterinary pharmacy &middot; Operating in Egypt</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/walks.js"></script>
+</body>
+</html>

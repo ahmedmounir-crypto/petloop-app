@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account | PetLoop</title>
+<meta name="description" content="Manage your pets, orders, bookings, matches and walks.">
+<link rel="icon" type="image/svg+xml" href="assets/brand/logomark-coral.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-links">
+        <a href="grooming.html">Become a Grooming Partner</a>
+        <a href="sell-pet.html">Sell on PetLoop</a>
+        <a href="pharmacy.html">Licensed Pharmacy</a>
+      </div>
+      <div class="header-top-links">
+        <a href="account.html">Help Center</a>
+        <a href="admin.html">Trust &amp; Safety Console</a>
+      </div>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img class="mark" src="assets/brand/logomark-coral.svg" alt="">
+        <span class="word">Pet<b>Loop</b></span>
+      </a>
+      <div class="search-bar">
+        <span class="icon "><img src="assets/icons/search-grey.svg" alt=""></span>
+        <input type="text" placeholder="Search food, breeds, groomers, pets for sale...">
+      </div>
+      <nav class="nav-links">
+      <a href="shop.html">Shop</a>
+      <a href="feed.html" class="active">Community</a>
+      <a href="matchmaking.html">Matchmaking</a>
+      <a href="walks.html">Dog Walks</a>
+      <a href="grooming.html">Grooming</a>
+      <a href="pharmacy.html">Pharmacy</a>
+      <a href="marketplace.html">Marketplace</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="icon-btn" title="Account"><span class="icon "><img src="assets/icons/users-ink.svg" alt=""></span></a>
+        <a href="cart.html" class="icon-btn" title="Cart"><span class="icon "><img src="assets/icons/cart-ink.svg" alt=""></span><span class="count">3</span></a>
+        <a href="register.html" class="btn btn-coral btn-sm">Sign Up</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / My Account</div>
+    <h1 id="welcome-name">My Account</h1>
+    <p class="lede">Manage your pets, orders, bookings and conversations in one place.</p>
+  </div>
+</section>
+
+<section class="section" id="account-login-section" style="display:none;">
+  <div class="container-narrow">
+    <div id="login-status" class="form-hint" style="display:none;margin-bottom:16px;padding:12px 14px;border-radius:10px;"></div>
+    <div class="card">
+      <h3 class="mt-0">Log In</h3>
+      <form id="login-form" novalidate>
+        <div class="form-field"><label>Email Address</label><input id="login-email" type="email" placeholder="you@email.com" required></div>
+        <div class="form-field"><label>Password</label><input id="login-password" type="password" placeholder="Your password" required></div>
+        <button type="submit" class="btn btn-coral btn-block" id="login-submit">Log In</button>
+      </form>
+      <p class="form-hint" style="text-align:center;margin-top:14px;">New to PetLoop? <a href="register.html">Create a pet profile</a> to sign up.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="account-dashboard-section" style="display:none;">
+  <div class="container">
+    <div class="shop-layout">
+      <aside>
+        <div class="filter-box" style="padding:14px;">
+          <nav class="sidebar-nav">
+            <a href="#" class="active"><span class="icon "><img src="assets/icons/house-white.svg" alt=""></span> Overview</a>
+            <a href="pet-profile.html"><span class="icon "><img src="assets/icons/paw-ink.svg" alt=""></span> My Pets</a>
+            <a href="#"><span class="icon "><img src="assets/icons/receipt-ink.svg" alt=""></span> Orders</a>
+            <a href="#"><span class="icon "><img src="assets/icons/scissors-ink.svg" alt=""></span> Grooming Bookings</a>
+            <a href="matchmaking.html"><span class="icon "><img src="assets/icons/handshake-ink.svg" alt=""></span> Matches</a>
+            <a href="walks.html"><span class="icon "><img src="assets/icons/walking-ink.svg" alt=""></span> Walk Requests</a>
+            <a href="chat.html"><span class="icon "><img src="assets/icons/comments-ink.svg" alt=""></span> Messages</a>
+            <a href="sell-pet.html"><span class="icon "><img src="assets/icons/store-ink.svg" alt=""></span> My Listings</a>
+            <a href="#" id="logout-link"><span class="icon "><img src="assets/icons/gear-ink.svg" alt=""></span> Log Out</a>
+          </nav>
+        </div>
+      </aside>
+      <div>
+        <div class="stat-row">
+          <div class="stat-tile"><span>Active Orders</span><strong>2</strong></div>
+          <div class="stat-tile"><span>Upcoming Bookings</span><strong>1</strong></div>
+          <div class="stat-tile"><span>Match Requests</span><strong>4</strong></div>
+          <div class="stat-tile"><span>Registered Pets</span><strong id="pets-count">0</strong></div>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <h3 class="mt-0">My Pets</h3>
+          <div id="my-pets-list"></div>
+          <a href="add-pet.html" class="btn btn-ghost btn-sm" style="margin-top:14px;"><span class="icon "><img src="assets/icons/plus-ink.svg" alt=""></span> Add Another Pet</a>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <h3 class="mt-0"><span class="icon "><img src="assets/icons/shield-ink.svg" alt=""></span> Identity Verification <span id="verification-badge"></span></h3>
+          <p>Verify you're a real pet owner by uploading a photo of yourself with your pet and a short 5&ndash;10 second video. This unlocks a "Verified Owner" badge on your profile and is reviewed by PetLoop's Trust &amp; Safety team &mdash; not an automated system.</p>
+
+          <div id="verification-pending-note" class="form-hint" style="display:none;">Your verification is under review. We'll update this once it's been checked.</div>
+          <div id="verification-verified-note" class="form-hint" style="display:none;">You're a verified owner. Thanks for helping keep PetLoop trustworthy!</div>
+
+          <form id="verification-form">
+            <div class="form-field">
+              <label>Photo of you with your pet</label>
+              <label class="upload-drop" style="cursor:pointer;display:block;">
+                <span class="icon "><img src="assets/icons/camera-grey.svg" alt=""></span>
+                <div id="verify-photo-label">Drag &amp; drop a photo, or <b>browse files</b></div>
+                <input type="file" id="verify-photo" accept="image/*" style="display:none;">
+              </label>
+            </div>
+            <div class="form-field">
+              <label>Short video of your pet (5&ndash;10 seconds)</label>
+              <label class="upload-drop" style="cursor:pointer;display:block;">
+                <span class="icon "><img src="assets/icons/upload-grey.svg" alt=""></span>
+                <div id="verify-video-label">Drag &amp; drop a video, or <b>browse files</b></div>
+                <input type="file" id="verify-video" accept="video/*" style="display:none;">
+              </label>
+              <p class="form-hint">This helps confirm your pet is real and current &mdash; not a stock photo or AI image.</p>
+            </div>
+            <div id="verification-status" class="form-hint" style="display:none;margin-bottom:12px;padding:12px 14px;border-radius:10px;"></div>
+            <button type="submit" class="btn btn-coral" id="verification-submit">Submit for Review</button>
+          </form>
+        </div>
+
+        <div class="card" style="margin-bottom:20px;">
+          <h3 class="mt-0">Recent Orders <span class="badge-pill badge-grey">Sample preview</span></h3>
+          <p class="form-hint">Real order history arrives once the Shop module is wired up.</p>
+          <table class="admin-table">
+            <tr><th>Order</th><th>Items</th><th>Status</th><th>Total</th></tr>
+            <tr><td>#PL-10432</td><td>Dog food, flea &amp; tick chewables</td><td><span class="badge-pill badge-gold">Processing Rx</span></td><td>EGP 2,274</td></tr>
+            <tr><td>#PL-10298</td><td>Feather wand toy set</td><td><span class="badge-pill badge-green">Delivered</span></td><td>EGP 220</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3 class="mt-0">Upcoming Grooming <span class="badge-pill badge-grey">Sample preview</span></h3>
+          <p class="form-hint">Real bookings arrive once the Grooming module is wired up.</p>
+          <div class="cart-row">
+            <div class="cart-thumb"><span class="icon "><img src="assets/icons/scissors-grey.svg" alt=""></span></div>
+            <div class="grow"><h4>Whiskers &amp; Co. Grooming</h4><span style="font-size:13px;color:var(--grey-light);">Saturday, 10:00 AM &middot; Full Groom for Simba</span></div>
+            <a href="groomer-profile.html" class="btn btn-outline-ink btn-sm">Manage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-news">
+      <div>
+        <h3>Get the PetLoop app</h3>
+        <p>Shop, match, book grooming and find walk buddies on the go.</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="you@email.com">
+        <button class="btn btn-coral" type="submit">Notify Me</button>
+      </form>
+    </div>
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:14px;">
+          <img class="mark" src="assets/brand/logomark-cream.svg" alt="" style="width:34px;height:34px;">
+          <span class="word">Pet<b>Loop</b></span>
+        </a>
+        <p>Everything for your pet, in one loop &mdash; shop, social, matchmaking, walks, grooming, pharmacy and marketplace.</p>
+        <div class="footer-trust">
+          <span>Licensed Veterinary Pharmacy</span>
+          <span>Egypt-based</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html">Pet Food</a>
+        <a href="shop.html">Accessories</a>
+        <a href="shop.html">Toys</a>
+        <a href="pharmacy.html">Pharmacy</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="feed.html">Social Feed</a>
+        <a href="matchmaking.html">Breed Matchmaking</a>
+        <a href="walks.html">Dog Walks</a>
+        <a href="register.html">Create a Pet Profile</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="grooming.html">Grooming</a>
+        <a href="marketplace.html">Pet Marketplace</a>
+        <a href="sell-pet.html">List a Pet</a>
+        <a href="grooming.html">Become a Partner</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="admin.html">Trust &amp; Safety</a>
+        <a href="account.html">My Account</a>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; PetLoop. All rights reserved.</span>
+      <span>Licensed veterinary pharmacy &middot; Operating in Egypt</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/petloop.js"></script>
+<script src="assets/js/account.js"></script>
+</body>
+</html>
