@@ -108,18 +108,116 @@ document.addEventListener("DOMContentLoaded", async function () {
     }, { once: true });
   }
 
+  var forgotCard = document.getElementById("forgot-password-card");
+  var setNewPasswordCard = document.getElementById("set-new-password-card");
+  var loginCard = document.querySelector("#account-login-section .card");
+
   function showLogin() {
     dashboardSection.style.display = "none";
     loginSection.style.display = "block";
+    loginCard.style.display = "block";
+    forgotCard.style.display = "none";
+    setNewPasswordCard.style.display = "none";
   }
 
+  function showForgotPassword() {
+    dashboardSection.style.display = "none";
+    loginSection.style.display = "block";
+    loginCard.style.display = "none";
+    forgotCard.style.display = "block";
+    setNewPasswordCard.style.display = "none";
+  }
+
+  function showSetNewPassword() {
+    dashboardSection.style.display = "none";
+    loginSection.style.display = "block";
+    loginCard.style.display = "none";
+    forgotCard.style.display = "none";
+    setNewPasswordCard.style.display = "block";
+  }
+
+  // Supabase redirects password-recovery links back with #...&type=recovery in the URL.
+  var isRecovery = window.location.hash.indexOf("type=recovery") !== -1;
+
   var user = await window.petloop.getSessionUser();
-  if (user) {
+  if (isRecovery) {
+    showSetNewPassword();
+  } else if (user) {
     await finishPendingPetIfAny(user, user.email);
     await renderDashboard(user);
   } else {
     showLogin();
   }
+
+  document.getElementById("forgot-password-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    showForgotPassword();
+  });
+  document.getElementById("back-to-login-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    showLogin();
+  });
+
+  var forgotForm = document.getElementById("forgot-password-form");
+  var forgotStatus = document.getElementById("forgot-status");
+  function showForgotStatus(message, kind) {
+    forgotStatus.style.display = "block";
+    forgotStatus.textContent = message;
+    forgotStatus.style.background = kind === "error" ? "#FBE8E4" : "#E9F2EC";
+    forgotStatus.style.color = kind === "error" ? "#B23B2E" : "#21403A";
+  }
+  forgotForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var submitBtn = document.getElementById("forgot-submit");
+    var email = document.getElementById("forgot-email").value.trim();
+    if (!email) {
+      showForgotStatus("Enter your account email.", "error");
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    var res = await db.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + window.location.pathname
+    });
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Reset Link";
+    if (res.error) {
+      showForgotStatus(res.error.message, "error");
+      return;
+    }
+    showForgotStatus("If an account exists for " + email + ", a reset link is on its way. Check your inbox (and spam folder).", "ok");
+  });
+
+  var setNewPasswordForm = document.getElementById("set-new-password-form");
+  var newPasswordStatus = document.getElementById("new-password-status");
+  function showNewPasswordStatus(message, kind) {
+    newPasswordStatus.style.display = "block";
+    newPasswordStatus.textContent = message;
+    newPasswordStatus.style.background = kind === "error" ? "#FBE8E4" : "#E9F2EC";
+    newPasswordStatus.style.color = kind === "error" ? "#B23B2E" : "#21403A";
+  }
+  setNewPasswordForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var submitBtn = document.getElementById("new-password-submit");
+    var newPassword = document.getElementById("new-password").value;
+    if (!newPassword || newPassword.length < 6) {
+      showNewPasswordStatus("Password must be at least 6 characters.", "error");
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Saving...";
+    var res = await db.auth.updateUser({ password: newPassword });
+    if (res.error) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Save New Password";
+      showNewPasswordStatus(res.error.message, "error");
+      return;
+    }
+    showNewPasswordStatus("Password updated! Redirecting to your account...", "ok");
+    setTimeout(function () {
+      window.location.href = "account.html";
+    }, 1200);
+  });
 
   var loginForm = document.getElementById("login-form");
   var loginStatus = document.getElementById("login-status");
