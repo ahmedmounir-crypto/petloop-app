@@ -66,10 +66,25 @@ document.addEventListener("DOMContentLoaded", async function () {
   var sessionUser = await window.petloop.getSessionUser();
   var isOwner = !!sessionUser && sessionUser.id === pet.owner_id;
 
-  // ---- Request Match button: send straight to matchmaking pre-filtered for this pet ----
-  var requestMatchBtn = document.querySelector('a[href="matchmaking.html"]');
-  if (requestMatchBtn) {
-    requestMatchBtn.href = "matchmaking.html?target=" + encodeURIComponent(pet.id);
+  // ---- Owner-only vs visitor-only action buttons ----
+  var requestMatchBtn = document.getElementById("pet-request-match-btn");
+  var messageBtn = document.getElementById("pet-message-btn");
+  var ownerSettingsBtn = document.getElementById("pet-owner-settings-btn");
+  if (isOwner) {
+    // Owners manage their own pet from here; they can't match/message themselves.
+    if (requestMatchBtn) requestMatchBtn.style.display = "none";
+    if (messageBtn) messageBtn.style.display = "none";
+    if (ownerSettingsBtn) ownerSettingsBtn.style.display = "flex";
+  } else {
+    if (requestMatchBtn) requestMatchBtn.href = "matchmaking.html?target=" + encodeURIComponent(pet.id);
+    if (!sessionUser && requestMatchBtn) {
+      requestMatchBtn.href = "account.html?next=" + encodeURIComponent("matchmaking.html?target=" + pet.id);
+    }
+    if (messageBtn) {
+      messageBtn.href = sessionUser
+        ? "chat.html?with=" + encodeURIComponent(pet.owner_id)
+        : "account.html?next=" + encodeURIComponent("chat.html?with=" + pet.owner_id);
+    }
   }
 
   // ---- Ready for Mating toggle (owner only) ----
@@ -333,7 +348,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   var emptyMsg = document.getElementById("similar-pets-empty");
   var similar = (similarRes.data || []);
 
-  document.getElementById("similar-pets-heading").textContent = "Other " + pet.species + "s on PetLoop";
+  var SPECIES_PLURAL = { Fish: "Fish" };
+  var speciesPlural = SPECIES_PLURAL[pet.species] || (pet.species + "s");
+  document.getElementById("similar-pets-heading").textContent = "Other " + speciesPlural + " on PetLoop";
   similarSection.style.display = "block";
 
   if (similar.length === 0) {

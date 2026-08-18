@@ -40,8 +40,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         : '<span class="icon "><img src="' + (CATEGORY_ICON[p.category] || "assets/icons/paw-ink.svg") + '" alt=""></span>';
       var outOfStock = p.stock <= 0;
 
-      var card = document.createElement("div");
+      var card = document.createElement("a");
       card.className = "product-card";
+      card.href = "product.html?id=" + p.id;
+      card.style.display = "block";
+      card.style.color = "inherit";
+      card.style.textDecoration = "none";
       card.innerHTML =
         '<div class="product-media">' + media +
         (outOfStock ? '<span class="badge-pill badge-grey flag">Out of Stock</span>' : '') +
@@ -55,7 +59,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       var addBtn = card.querySelector(".add-btn");
       if (!outOfStock) {
-        addBtn.addEventListener("click", async function () {
+        addBtn.addEventListener("click", async function (e) {
+          e.preventDefault();
+          e.stopPropagation();
           var user = await window.petloop.getSessionUser();
           if (!user) {
             window.location.href = "account.html?next=shop.html";
@@ -68,6 +74,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           } else {
             await db.from("cart_items").insert({ profile_id: user.id, product_id: p.id, quantity: 1 });
           }
+          await window.petloop.refreshCartBadge();
           addBtn.innerHTML = '<span class="icon "><img src="assets/icons/check-white.svg" alt=""></span>';
           setTimeout(function () {
             addBtn.innerHTML = '<span class="icon "><img src="assets/icons/plus-white.svg" alt=""></span>';

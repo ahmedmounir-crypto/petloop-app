@@ -14,6 +14,8 @@
   window.petloop = window.petloop || {};
   var db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   window.petloop.db = db;
+  window.petloop.DELIVERY_FEE = 60;
+  window.petloop.money = function (n) { return "EGP " + Number(n).toLocaleString(); };
 
   // ---- species → icon filename (matches assets/icons/*-ink.svg set) ----
   var SPECIES_ICON = {
@@ -251,4 +253,24 @@
       );
     });
   };
+
+  // ---- live cart badge in the header, on every page that loads petloop.js ----
+  window.petloop.refreshCartBadge = async function () {
+    var badges = document.querySelectorAll('a[href="cart.html"] .count');
+    if (!badges.length) return;
+    var user = await window.petloop.getSessionUser();
+    if (!user) {
+      badges.forEach(function (b) { b.style.display = "none"; });
+      return;
+    }
+    var res = await db.from("cart_items").select("quantity").eq("profile_id", user.id);
+    var total = (res.data || []).reduce(function (sum, row) { return sum + (row.quantity || 0); }, 0);
+    badges.forEach(function (b) {
+      b.textContent = total;
+      b.style.display = total > 0 ? "inline-flex" : "none";
+    });
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    window.petloop.refreshCartBadge();
+  });
 })();
