@@ -369,9 +369,9 @@ p .icon{ width:14px; height:14px; }
 .story span{ display:block; font-size:11.5px; margin-top:8px; font-weight:600; }
 
 .profile-cover{ height:220px; border-radius: var(--radius-xl); background: linear-gradient(120deg, var(--ink), var(--ink-card)); position:relative; }
-.profile-header{ display:flex; align-items:flex-end; gap:22px; margin-top:-56px; padding: 0 8px 24px; flex-wrap:wrap; }
+.profile-header{ display:flex; align-items:flex-end; gap:22px; margin-top:-12px; padding: 0 8px 24px; flex-wrap:wrap; }
 .profile-header .avatar-ring{ box-shadow: var(--shadow-card); }
-.profile-meta h1{ font-size:24px; margin:0 0 6px; }
+.profile-meta h1{ font-size:24px; margin:0 0 6px; color:var(--ink); }
 .profile-badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
 .profile-stats{ display:flex; gap:28px; margin-top:14px; }
 .profile-stats div strong{ display:block; font-size:18px; font-family:var(--font-display); }
@@ -393,6 +393,9 @@ p .icon{ width:14px; height:14px; }
 .post-actions{ display:flex; align-items:center; gap:16px; padding:14px 18px 6px; }
 .post-actions .icon{ width:20px; height:20px; }
 .post-actions .grow{ flex:1; }
+.icon-action{ background:none; border:none; padding:0; margin:0; cursor:pointer; display:inline-flex; align-items:center; line-height:0; }
+.icon-action:hover{ opacity:.7; }
+.post-comments-panel{ padding:0 18px 14px; }
 .post-likes{ padding: 4px 18px; font-size:14px; font-weight:700; }
 .post-caption{ padding: 0 18px 6px; font-size:14px; }
 .post-caption b{ margin-inline-end:6px; }
